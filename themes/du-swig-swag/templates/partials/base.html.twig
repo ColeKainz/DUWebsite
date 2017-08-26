@@ -1,0 +1,90 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('http://yui.yahooapis.com/pure/0.6.0/pure-min.css', 100) %}
+        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 99) %}
+        {% do assets.addCss('theme://css/custom.css', 98) %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('jquery', 100) %}
+    {% endblock %}
+    {{ assets.js() }}
+	
+	<script type="text/javascript">
+		var showMenu = false;
+	
+		window.onscroll = function(e) {
+			var distance = $(window).scrollTop();
+			
+			//Header height plus margin offset
+			if($(window).width() > 688) {
+				if(distance > 50) {
+					//Subtract header height, add margin offset
+					$('#nav').css('margin-top',distance - 50);
+				} else {
+					$('#nav').css('margin-top',0);
+				}
+			}
+		}
+
+		scrollMenu = function() {
+			if(showMenu){
+				$('#nav').css('left', -380);
+				$('#expand-button').attr("src","{{url("theme://images/mobile-menu.png")}}");
+				showMenu = false;
+			}else{
+				$('#nav').css('left', 0);
+				$('#expand-button').attr("src","{{url("theme://images/mobile-menu-active.png")}}");
+				showMenu = true;
+			}
+		}
+	</script>
+
+{% endblock head%}
+</head>
+<body id="top" class="{{ page.header.body_classes }} main">
+{% block header %}
+    <header class="header-container">
+		<img src="{{url("theme://images/mobile-menu.png")}}" id="expand-button" class="expand-nav" onclick="scrollMenu()"/>		
+		<div class="header">
+			<a class="logo" href="{{ base_url == '' ? '/' : base_url }}">
+				<img src="{{url("theme://images/DU-Logo.png")}}" class="du-logo" align="top"/>
+				{{ config.site.title }}
+			</a>
+		</div>
+    </header>
+{% endblock %}
+<div class="center-container">
+{% block header_navigation %}
+	<div id="nav" class="main-nav">
+		{% include 'partials/navigation.html.twig' %}
+	</div>
+{% endblock %}
+
+{% block body %}
+    <section class="body" id="body">
+        {% block content %}{% endblock %}
+    </section>
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}
+</div>
+</body>
+</html>

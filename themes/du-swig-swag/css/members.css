@@ -1,0 +1,53 @@
+#membersTable {
+	border-collapse: collapse;
+	border-style: none;
+}
+
+#membersTable td {
+	border-style: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.memberName {
+	margin: -5px;
+}
+
+.memberPos {
+	font-weight: bold;
+	margin: -5px;
+	margin-bottom: 2px;
+}
+
+.presDis {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+}
+
+.presInfo {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+}
+
+.presTitle {
+	font-weight: bold;
+	font-size: 3em;
+	margin-top: -20px;
+	margin-left: 10px;
+	margin-bottom: -30px;
+}
+
+.presPos {
+	text-align: left;
+	font-weight: bold;
+	padding-left: 10px;
+	margin-bottom: -20px;
+}
+
+.presName {
+	text-align: left;
+	padding-left: 10px;
+	margin-bottom: -20px;
+}

@@ -1,0 +1,39 @@
+title: Members
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+            header.members:
+              name: members
+              type: list
+              style: vertical
+              label: Members
+
+              fields:
+                .name:
+                  type: text
+                  label: Name
+
+                .position:
+                  type: selectize
+                  label: Position(s)
+                  multiple: true
+                  validate:
+                    type: commalist
+
+                .picture:
+                  type: file
+                  label: Photograph
+                  multiple: false
+                  destination: 'self@'
+                  accept:
+                    - image/*

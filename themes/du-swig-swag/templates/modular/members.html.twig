@@ -1,0 +1,115 @@
+{% block stylesheets %}
+    {% do assets.addCss('theme://css/members.css', 103) %}
+{% endblock %}
+{{ assets.css() }}
+
+<div id="container">
+	<table border='1' width='100%' id="membersTable">
+
+	</table>
+</div>
+
+<script type="text/javascript">
+	var members = [
+	{% for member in page.header.members %}
+	{
+		name: "{{ member.name }}",
+		
+		position: [
+		{% for pos in member.position %}
+			"{{ pos }}",
+		{% endfor %}
+		],
+		
+		{% set twigPic = (member.picture |first).name %}
+		pic: "{{ page.media[twigPic].cropZoom(200, 325).url }}",
+	},
+	
+	{% endfor %}
+	];
+	
+	var memDisplayWidth = 250;
+	
+	function displayTable() {	
+		console.log("explosion");
+		var col = parseInt(parseInt($('#container').width()) / memDisplayWidth);
+		var table = $('#membersTable')[0];
+		var rowCount = 0;
+		var cellCount = 0; //Does not include president.
+				
+		//Refresh table.
+		table.innerHTML = "";
+		
+		for(i=0; i<members.length; i++){
+			if(members[i].position.indexOf('President') >= 0){
+				rowCount++;
+				var row = table.insertRow(0);
+				
+				var cell = row.insertCell(0);
+				cell.align = "center";
+				cell.className = "memberPresident";
+				cell.colSpan = col;
+				
+				//Only display president differently if space permits.
+				if(col > 1) {
+					cell.innerHTML =	'<div class="presDis">'
+									+		'<img src="' + members[i].pic + '"/>'
+									+		'<div class="presInfo">'
+									+			'<p class="presTitle">President</p>'
+									+			'<p class="presPos">' + positionToList(members[i].position, true) + '</p>'
+									+			'<p class="presName">' + members[i].name + '</p>'
+									+		'</div>'
+									+	'</div>';
+				} else {
+					cell.innerHTML =	'<div class="memberDis">'
+									+		'<p class="memberPos">' + positionToList(members[i].position, false) + '</p>'
+									+		'<img src="' + members[i].pic + '"/>'
+									+		'<p class="memberName">' + members[i].name + '</p>'
+									+	'</div>';
+				}
+			} else {				
+				var row;
+				
+				//If the row has been filled...
+				if(cellCount % col == 0){
+					var row = table.insertRow(rowCount);
+					rowCount++;
+				} else {
+					row = table.rows[rowCount - 1]; //Arrays ya know
+				}
+				
+				var cell = row.insertCell(cellCount % col);
+				cell.align = "center";
+				cell.className = "member";
+				cell.innerHTML =	'<div class="memberDis">'
+								+		'<p class="memberPos">' + positionToList(members[i].position, false) + '</p>'
+								+		'<img src="' + members[i].pic + '"/>'
+								+		'<p class="memberName">' + members[i].name + '</p>'
+								+	'</div>';
+								
+				cellCount++;
+			}
+		}
+	}
+	
+	function positionToList(positionArr, presidentDis){
+		var pos = "";
+
+		//Skip the president position.
+		var start = presidentDis ? 1 : 0;
+		
+		for(j=start; j<positionArr.length; j++){
+			pos += positionArr[j];
+			
+			//Don't add a comma for the last position.
+			if(j < positionArr.length - 1){
+				pos += ", ";
+			}
+		}
+		
+		return pos;
+	}
+	
+	$(document).ready(displayTable);
+	$(window).resize(displayTable);
+</script>

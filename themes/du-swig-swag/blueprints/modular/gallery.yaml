@@ -1,0 +1,39 @@
+title: Gallery
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        gallery:
+          type: tab
+          title: Gallery
+
+          fields:
+            header.an_example_text_field:
+              type: text
+              label: Add a number
+              default: 5
+              validate:
+                required: true
+                type: int
+
+            header.an_example_select_box:
+              type: select
+              label: Select one of the following
+              default: one
+              options:
+                one: One
+                two: Two
+                three: Three
+
+            route:
+              type: select
+              label: PLUGIN_ADMIN.PARENT
+              classes: fancy
+              '@data-options': '\Grav\Common\Page\Pages::parents'
+              '@data-default': '\Grav\Plugin\admin::route'
+              options:
+                '/': PLUGIN_ADMIN.DEFAULT_OPTION_ROOT
