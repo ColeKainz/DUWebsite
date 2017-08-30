@@ -230,7 +230,7 @@ screen size < content size + scrollbar*/
 
 
 .logo {
-	color: #ffffff;
+	color: #cccc33;
 	text-decoration: none;
 	
 	font-size: 2rem;
@@ -241,6 +241,8 @@ screen size < content size + scrollbar*/
 	width: 32px;
 	
 	margin-top:5px;
+	
+	background-color: #cccc33
 }
 
 /* Menu Settings */
