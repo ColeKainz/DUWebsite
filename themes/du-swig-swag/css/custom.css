@@ -1,4 +1,5 @@
 /* Core Stuff */
+/*This is what old people say they're gonna get when they try to start working out again*/
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -18,7 +19,6 @@ html {
     float: left;
     z-index: 10;
     background-color: #ffffff;
-    border-right: 1px solid #f0f0f0;
     position: fixed;
     overflow: hidden;
     left: -380px;
@@ -97,7 +97,7 @@ html {
 }
 .header-container {
   background: #000000;
-  color: #ffffff;
+  color: #cccc33;
   height: 50px;
   width: 100%;
   left: 0;
@@ -137,9 +137,9 @@ html {
 }
 /* Content Styling */
 .logo {
-  color: #cccc33;
   text-decoration: none;
   font-size: 2rem;
+  color: #cccc33;
 }
 .du-logo {
   height: 32px;
@@ -162,7 +162,6 @@ html {
   padding-top: 5px;
   height: 30px;
   width: 100%;
-  background-color: #f0f0f0;
   border-bottom: 1px solid #f0f0f0;
 }
 .main-nav ul li:hover {

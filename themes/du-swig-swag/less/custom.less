@@ -1,4 +1,13 @@
 /* Core Stuff */
+
+@mainNavBack:	#ffffff;
+@mainBack:		#f0f0f0;
+
+@headerBack:	#000000;
+@headerCol:		#cccc33;
+
+@bodyBack:		#ffffff; /*This is what old people say they're gonna get when they try to start working out again*/
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -21,8 +30,7 @@ html {
 		float: left;
 		z-index: 10;
 		
-		background-color: #ffffff;
-		border-right: 1px solid #f0f0f0;
+		background-color: @mainNavBack;
 			
 		position: fixed;
 		overflow: hidden;
@@ -61,7 +69,7 @@ html {
 	flex-direction: column;
 	align-items: center;
 
-	background-color: #f0f0f0;
+	background-color: @mainBack;
 	
 	@media (min-width: 700px) {
 		align-items: left;
@@ -103,8 +111,9 @@ html {
 }
 
 .header-container {
-	background: #000000;
-	color: #ffffff;
+	background: @headerBack;
+	color: @headerCol;
+
 		
 	height: 50px;
 	width: 100%;
@@ -137,7 +146,7 @@ html {
 	padding: 10px;
 	padding-left: 20px;
 		
-	background-color: #ffffff;
+	background-color: @bodyBack;
 	
 	@media (min-width: 1160px) and (max-width: 1386px) {
 		width: 940px;
@@ -152,10 +161,9 @@ html {
 /* Content Styling */
 
 .logo {
-	color: #cccc33;
 	text-decoration: none;
-	
 	font-size: 2rem;
+	color: @headerCol;
 }
 
 .du-logo {
@@ -164,10 +172,14 @@ html {
 	
 	margin-top:5px;
 	
-	background-color: #cccc33;
+	background-color: @headerCol;
 }
 
 /* Menu Settings */
+@navItemSelected: 	#fbfbfb;
+@navItemPressed: 	#e0e0e0;
+@navItemFont:		#000000;
+
 .main-nav ul {
 	width: 100%;
 	
@@ -175,7 +187,7 @@ html {
 	padding-left: 0px;
 	
 	list-style-type: none;
-	background-color: #f0f0f0;
+	background-color: @mainBack;
 }
 
 .main-nav ul li {
@@ -187,22 +199,20 @@ html {
 		
 	height: 30px;
 	width: 100%;
-	
-	background-color: #f0f0f0;
-	
-	border-bottom: 1px solid #f0f0f0;
+		
+	border-bottom: 1px solid @mainBack;
 }
 
 .main-nav ul li:hover {
-    background-color: #fbfbfb;
+    background-color: @navItemSelected;
 }
 
 .main-nav ul li:active {
-    background-color: #e0e0e0;
+    background-color: @navItemPressed;
 }
 
 .main-nav .selected{
-    background-color: #fbfbfb;
+    background-color: @navItemSelected;
 	
 	font-weight: bold;
 }
@@ -212,6 +222,6 @@ html {
 	
 	height: 30px;
 
-    color: #000000;
+    color: @navItemFont;
 	text-decoration: none;
 }
