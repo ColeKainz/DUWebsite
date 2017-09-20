@@ -1,3 +1,8 @@
+{% block stylesheets %}
+    {% do assets.addCss('theme://css/events.css', 103) %}
+{% endblock %}
+{{ assets.css() }}
+
 
 <div id="container">
 	<table border='1' width='100%' id="eventsTable">
@@ -35,13 +40,14 @@
 				rowCount++;
 				
 				var picCell = row.insertCell(0);
-				picCell.align = "center";
-				picCell.className = "picture";
-				picCell.innerHTML =	'<img src="' + events[i].pic + '"/>';
+				picCell.className = "eventsPicture";
+				picCell.innerHTML =	'<img style="vertical-align:middle;" src="' + events[i].pic + '"/>';
 				
 				var conCell = row.insertCell(1);
 				conCell.className = "eventsContent";
-				conCell.innerHTML = '<div class="contentHeader"><div>' + events[i].title + '</div><div>' + events[i].date + '</div></div><div>' + events[i].description + '</div>';
+				conCell.innerHTML = '<div class="contentHeader">' +
+										'<div>' + events[i].title + '</div>' + 
+										'<div>' + events[i].date + '</div></div><div class="contentDesc">' + events[i].description + '</div>';
 			
 		}
 	}
