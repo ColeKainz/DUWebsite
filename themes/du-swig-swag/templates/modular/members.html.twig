@@ -10,6 +10,19 @@
 </div>
 
 <script type="text/javascript">
+	var president = {
+		name: "{{header.president.name}}",
+		
+		position: [
+		{% for pos in header.member.position %}
+			"{{ pos }}",
+		{% endfor %}
+		],
+		
+		{% set twigPic = (header.president.picture |first).name %}
+		pic: "{{ page.media[twigPic].cropZoom(200, 325).url }}",
+	}
+	
 	var members = [
 	{% for member in page.header.members %}
 	{
@@ -40,55 +53,44 @@
 		//Refresh table.
 		table.innerHTML = "";
 		
-		for(i=0; i<members.length; i++){
-			if(members[i].position.indexOf('President') >= 0){
+		rowCount++;
+		var row = table.insertRow(0);
+		
+		var cell = row.insertCell(0);
+		cell.align = "center";
+		cell.className = "memberPresident";
+		cell.colSpan = col;
+		
+		cell.innerHTML =	'<div class="presDis">'
+						+		'<img src="' + president.pic + '"/>'
+						+		'<div class="presInfo">'
+						+			'<p class="presTitle">President</p>'
+						+			'<p class="presPos">' + positionToList(president.position, true) + '</p>'
+						+			'<p class="presName">' + president.name + '</p>'
+						+		'</div>'
+						+	'</div>';
+		
+		for(i=0; i<members.length; i++){				
+			var row;
+			
+			//If the row has been filled...
+			if(cellCount % col == 0){
+				var row = table.insertRow(rowCount);
 				rowCount++;
-				var row = table.insertRow(0);
-				
-				var cell = row.insertCell(0);
-				cell.align = "center";
-				cell.className = "memberPresident";
-				cell.colSpan = col;
-				
-				//Only display president differently if space permits.
-				if(col > 1) {
-					cell.innerHTML =	'<div class="presDis">'
-									+		'<img src="' + members[i].pic + '"/>'
-									+		'<div class="presInfo">'
-									+			'<p class="presTitle">President</p>'
-									+			'<p class="presPos">' + positionToList(members[i].position, true) + '</p>'
-									+			'<p class="presName">' + members[i].name + '</p>'
-									+		'</div>'
-									+	'</div>';
-				} else {
-					cell.innerHTML =	'<div class="memberDis">'
-									+		'<p class="memberPos">' + positionToList(members[i].position, false) + '</p>'
-									+		'<img src="' + members[i].pic + '"/>'
-									+		'<p class="memberName">' + members[i].name + '</p>'
-									+	'</div>';
-				}
-			} else {				
-				var row;
-				
-				//If the row has been filled...
-				if(cellCount % col == 0){
-					var row = table.insertRow(rowCount);
-					rowCount++;
-				} else {
-					row = table.rows[rowCount - 1]; //Arrays ya know
-				}
-				
-				var cell = row.insertCell(cellCount % col);
-				cell.align = "center";
-				cell.className = "member";
-				cell.innerHTML =	'<div class="memberDis">'
-								+		'<p class="memberPos">' + positionToList(members[i].position, false) + '</p>'
-								+		'<img src="' + members[i].pic + '"/>'
-								+		'<p class="memberName">' + members[i].name + '</p>'
-								+	'</div>';
-								
-				cellCount++;
+			} else {
+				row = table.rows[rowCount - 1]; //Arrays ya know
 			}
+			
+			var cell = row.insertCell(cellCount % col);
+			cell.align = "center";
+			cell.className = "member";
+			cell.innerHTML =	'<div class="memberDis">'
+							+		'<p class="memberPos">' + positionToList(members[i].position, false) + '</p>'
+							+		'<img src="' + members[i].pic + '"/>'
+							+		'<p class="memberName">' + members[i].name + '</p>'
+							+	'</div>';
+							
+			cellCount++;
 		}
 	}
 	

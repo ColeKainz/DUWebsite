@@ -1,45 +1,25 @@
 ---
+president:
+    name: Sir.Swaggen
+    position:
+        - President
+    picture:
+        user/pages/04.test3/_members/tucker.jpg:
+            name: tucker.jpg
+            type: image/jpeg
+            size: 47949
+            path: user/pages/04.test3/_members/tucker.jpg
 members:
     -
-        name: Mr.FUCKINGLAZYPOS
+        name: COWEOWOWOW
         position:
-            - 'VP DoesNothing'
-            - 'VP SitOnAss'
+            - 'CP COWERWORWO'
         picture:
-            user/pages/04.test3/_members/what.png:
-                name: what.png
-                type: image/png
-                size: 189383
-                path: user/pages/04.test3/_members/what.png
-    -
-        name: 'Sexy SonaBitch'
-        position:
-            - 'VP Smexy'
-        picture:
-            user/pages/04.test3/_members/Sexy.jpg:
-                name: Sexy.jpg
+            user/pages/04.test3/_members/mb.jpg:
+                name: mb.jpg
                 type: image/jpeg
-                size: 46187
-                path: user/pages/04.test3/_members/Sexy.jpg
-    -
-        name: Sir.Swaggen
-        position:
-            - President
-        picture:
-            user/pages/04.test3/_members/mfw.jpg:
-                name: mfw.jpg
-                type: image/jpeg
-                size: 59256
-                path: user/pages/04.test3/_members/mfw.jpg
-    -
-        name: Cow
-        position:
-            - 'Goddam Cow'
-        picture:
-            user/pages/04.test3/_members/cow.jpg:
-                name: cow.jpg
-                type: image/jpeg
-                size: 12766
-                path: user/pages/04.test3/_members/cow.jpg
+                size: 50749
+                path: user/pages/04.test3/_members/mb.jpg
+title: Members
 ---
 
