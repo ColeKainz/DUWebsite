@@ -24,7 +24,10 @@ form:
                   label: Title
 
                 .date:
-                  type: date
+                  type: datetime
+                  label: PLUGIN_ADMIN.DATE
+                  toggleable: true
+                  help: PLUGIN_ADMIN.DATE_HELP
                   label: Date
                   
                 .description:

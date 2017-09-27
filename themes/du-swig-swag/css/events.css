@@ -13,6 +13,8 @@ tr, td{
 
 .eventsPicture{
 	width: 200px;
+	top: 5px;
+	vertical-align: top;
 }
 
 .eventsContent{
@@ -28,6 +30,10 @@ tr, td{
 .contentHeader{
 	display: flex;
 	justify-content: space-between;
+}
+
+.contentDesc{
+	font-size: 12px;
 }
 
 
