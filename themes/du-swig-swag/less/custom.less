@@ -1,12 +1,14 @@
 /* Core Stuff */
 
-@mainNavBack:	#ffffff;
-@mainBack:		#f0f0f0;
+@mainNavBack:	transparent;
+@mainBack:		transparent;
 
-@headerBack:	#000000;
-@headerCol:		#cccc33;
+@headerBack:	#4169e1;
+@headerCol:		#ffffff;
 
-@bodyBack:		#ffffff; /*This is what old people say they're gonna get when they try to start working out again*/
+@bodyBack:		transparent;
+
+@textCol:		#000000;
 
 * {
     -webkit-box-sizing: border-box;
@@ -21,6 +23,12 @@
 html {
 	overflow-y: scroll;
 	overflow-x: hidden;
+	
+	background-color: #ffffff;
+}
+
+body {
+	/*background-image: url("../images/background.jpg");*/
 }
 
 .main-nav {
@@ -48,6 +56,10 @@ html {
 		float: left;
 		
 		margin-right: 10px;
+		
+		border-style: solid;
+		border-width: 0 2px 0 0;
+		border-color: @headerBack;
 	}
 }
 
@@ -70,6 +82,8 @@ html {
 	align-items: center;
 
 	background-color: @mainBack;
+	
+	color: @textCol;
 	
 	@media (min-width: 700px) {
 		align-items: left;
@@ -126,6 +140,10 @@ html {
 		
 	text-align: center;
 	
+	-moz-box-shadow: 0 0 8px 0 black;
+	-webkit-box-shadow: 0 0 8px 0 black;
+	box-shadow: 0 0 8px 0 black;
+	
 	@media (min-width: 700px) {
 		position: absolute;
 		
@@ -158,6 +176,10 @@ html {
 	}	
 }
 
+.body a:link, .body a:visited {
+	color: #ffffff;
+}
+
 /* Content Styling */
 
 .logo {
@@ -175,11 +197,14 @@ html {
 	background-color: @headerCol;
 }
 
-/* Menu Settings */
-@navItemSelected: 	#fbfbfb;
-@navItemPressed: 	#e0e0e0;
-@navItemFont:		#000000;
+.blue a:link, .blue a:visited {
+	color: #0000ff;
+}
 
+/* Menu Settings */
+@navItemSelected: 	transparent;
+@navItemFont:		#4169e1;
+@navItemSep:		#f0f0f0;
 .main-nav ul {
 	width: 100%;
 	
@@ -200,20 +225,17 @@ html {
 	height: 30px;
 	width: 100%;
 		
-	border-bottom: 1px solid @mainBack;
+	border-top: 1px solid @navItemSep;
 }
 
-.main-nav ul li:hover {
+.main-nav a:hover,  .main-nav a:visited{
     background-color: @navItemSelected;
+	color: @navItemFont;
 }
 
-.main-nav ul li:active {
-    background-color: @navItemPressed;
-}
-
-.main-nav .selected{
+.main-nav a .selected{
     background-color: @navItemSelected;
-	
+	color: @navItemFont;
 	font-weight: bold;
 }
 
