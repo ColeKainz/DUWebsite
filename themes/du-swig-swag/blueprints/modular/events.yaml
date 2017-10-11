@@ -26,7 +26,7 @@ form:
                 .date:
                   type: datetime
                   label: PLUGIN_ADMIN.DATE
-                  toggleable: true
+                  toggleable: false
                   help: PLUGIN_ADMIN.DATE_HELP
                   label: Date
                   
