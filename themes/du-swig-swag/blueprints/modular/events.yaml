@@ -1,0 +1,43 @@
+title: Events
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+            header.events:
+              name: events
+              type: list
+              style: vertical
+              label: Events
+
+              fields:
+                .title:
+                  type: text
+                  label: Title
+
+                .date:
+                  type: datetime
+                  label: PLUGIN_ADMIN.DATE
+                  toggleable: false
+                  help: PLUGIN_ADMIN.DATE_HELP
+                  label: Date
+                  
+                .description:
+                  type: text
+                  label: Description
+                  
+                .pic:
+                  type: file
+                  label: Photograph
+                  multiple: false
+                  destination: 'self@'
+                  accept:
+                    - image/*
