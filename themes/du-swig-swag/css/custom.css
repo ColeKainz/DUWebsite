@@ -1,4 +1,4 @@
-/* Core Stuff TEST*/
+/* Core Stuff */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -55,7 +55,6 @@ body {
 .main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-color: transparent;
   color: #000000;
 }
@@ -64,9 +63,9 @@ body {
     align-items: left;
   }
 }
-@media (min-width: 1160px) and (max-width: 1386px) {
+@media (min-width: 1160px) {
   .main {
-    align-items: left;
+    align-items: center;
   }
 }
 .center-container {
@@ -78,14 +77,10 @@ body {
     margin-bottom: 20px;
   }
 }
-@media (min-width: 1160px) and (max-width: 1386px) {
-  .center-container {
-    width: 1160px;
-  }
-}
 @media (min-width: 1386px) {
   .center-container {
     width: 1360px;
+    align-items: center;
   }
 }
 .header {
