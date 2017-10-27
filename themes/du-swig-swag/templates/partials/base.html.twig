@@ -27,6 +27,12 @@
 	
 	<script type="text/javascript">
 		var showMenu = false;
+		
+		onBodyClick = function() {
+			$('#nav').css('left', -380);
+			$('#expand-button').attr("src","{{url("theme://images/mobile-menu.png")}}");
+			showMenu = false;
+		}
 	
 		window.onscroll = function(e) {
 			var distance = $(window).scrollTop();
@@ -77,7 +83,7 @@
 {% endblock %}
 
 {% block body %}
-    <section class="body" id="body">
+    <section class="body" id="body" onclick="onBodyClick()">
         {% block content %}{% endblock %}
     </section>
 {% endblock %}

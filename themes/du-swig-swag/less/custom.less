@@ -1,6 +1,6 @@
 /* Core Stuff */
 
-@mainNavBack:	transparent;
+@mainNavBack:	#ffffff;
 @mainBack:		transparent;
 
 @headerBack:	#4169e1;
@@ -32,11 +32,12 @@ body {
 }
 
 .main-nav {
+	font-size: 1.25rem;
+	
 	@media (max-width: 700px) {
-		width: 380px;
+		width: 200px;
 		height: 100%;
 		float: left;
-		z-index: 10;
 		
 		background-color: @mainNavBack;
 			
@@ -49,6 +50,10 @@ body {
 		flex-direction: row;
 			
 		margin-right: 10px;
+		
+		-moz-box-shadow: 0 0 8px 0 black;
+		-webkit-box-shadow: 0 0 8px 0 black;
+		box-shadow: 0 0 8px 0 black;
 	}
 	
 	@media (min-width: 700px) {
@@ -95,7 +100,7 @@ body {
 
 .center-container {
 	width: 100%;
-	margin-top: 60px;
+	margin-top: 50px;
 	
 	@media (min-width: 700px) {
 		margin-bottom: 20px;
@@ -123,6 +128,8 @@ body {
 .header-container {
 	background: @headerBack;
 	color: @headerCol;
+	
+	z-index: 10;
 
 		
 	height: 50px;
@@ -213,9 +220,9 @@ body {
 
 .main-nav ul li {
     letter-spacing: normal;
-	text-align: left;
+	text-align: right;
 	
-	padding-left: 10px;
+	padding-right: 7px;
 	padding-top: 5px;
 		
 	height: 30px;
