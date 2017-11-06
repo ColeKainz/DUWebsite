@@ -10,11 +10,11 @@
 }
 
 .memberName {
+	font-weight: bold;
 	margin: -5px;
 }
 
 .memberPos {
-	font-weight: bold;
 	margin: -5px;
 	margin-bottom: 2px;
 }
@@ -46,8 +46,23 @@
 	margin-bottom: -20px;
 }
 
+@media screen and (max-width: 500px) {
+	.presPos {
+		margin: -5px;
+		margin-bottom: 2px;
+	}
+}
+
 .presName {
 	text-align: left;
 	padding-left: 10px;
 	margin-bottom: -20px;
+}
+
+@media screen and (max-width: 500px) {
+	.presName {
+		font-weight: bold;
+		margin: -5px;
+	}
+}
 }

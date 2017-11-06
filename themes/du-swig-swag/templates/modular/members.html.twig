@@ -60,15 +60,32 @@
 		cell.align = "center";
 		cell.className = "memberPresident";
 		cell.colSpan = col;
-		
-		cell.innerHTML =	'<div class="presDis">'
-						+		'<img src="' + president.pic + '"/>'
-						+		'<div class="presInfo">'
-						+			'<p class="presTitle">President</p>'
-						+			'<p class="presPos">' + positionToList(president.position, true) + '</p>'
-						+			'<p class="presName">' + president.name + '</p>'
-						+		'</div>'
-						+	'</div>';
+		switch (col){
+			case 1:
+				cell.innerHTML =	'<div class="presDis">'
+								+		'<img src="' + president.pic + '"/>'
+								+		'<p class="presName">' + president.name + '</p>'							
+								+		'<p class="presPos">' + positionToList(president.position, false) + '</p>'
+								+	'</div>';
+			case 2:
+				cell.innerHTML =	'<div class="presDis">'
+								+		'<img src="' + president.pic + '"/>'
+								+		'<div class="presInfo">'
+								+			'<p class="presTitle">President</p>'			
+								+			'<p class="presName">' + president.name + '</p>'
+								+			'<p class="presPos">' + positionToList(president.position, true) + '</p>'
+								+		'</div>'
+								+	'</div>';
+			case 3:
+				cell.innerHTML =	'<div class="presDis">'
+								+		'<img src="' + president.pic + '"/>'
+								+		'<div class="presInfo">'
+								+			'<p class="presTitle">President</p>'			
+								+			'<p class="presName">' + president.name + '</p>'
+								+			'<p class="presPos">' + positionToList(president.position, true) + '</p>'
+								+		'</div>'
+								+	'</div>';
+		}
 		
 		for(i=0; i<members.length; i++){				
 			var row;
@@ -85,9 +102,9 @@
 			cell.align = "center";
 			cell.className = "member";
 			cell.innerHTML =	'<div class="memberDis">'
-							+		'<p class="memberPos">' + positionToList(members[i].position, false) + '</p>'
 							+		'<img src="' + members[i].pic + '"/>'
 							+		'<p class="memberName">' + members[i].name + '</p>'
+							+		'<p class="memberPos">' + positionToList(members[i].position, false) + '</p>'
 							+	'</div>';
 							
 			cellCount++;

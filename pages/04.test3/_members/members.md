@@ -20,6 +20,16 @@ members:
                 type: image/jpeg
                 size: 50749
                 path: user/pages/04.test3/_members/mb.jpg
+    -
+        name: 'Blair Panek'
+        position:
+            - Member
+        picture:
+            user/pages/04.test3/_members/doctorimage.png:
+                name: doctorimage.png
+                type: image/png
+                size: 1017239
+                path: user/pages/04.test3/_members/doctorimage.png
 title: Members
 ---
 
