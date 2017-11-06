@@ -4,6 +4,10 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: "zing";
+  src: url('../css/fonts/zing.otf');
+}
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -16,7 +20,8 @@ body {
   /*background-image: url("../images/background.jpg");*/
 }
 .main-nav {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
+  font-family: "zing";
 }
 @media (max-width: 700px) {
   .main-nav {
@@ -90,16 +95,17 @@ body {
 }
 .header {
   width: 100%;
+  font-family: "zing";
 }
 @media (min-width: 700px) {
   .header {
-    padding-left: 215px;
+    padding-left: 230px;
   }
 }
 @media (min-width: 1386px) {
   .header {
     width: 940px;
-    padding-left: 0px;
+    padding-left: 20px;
   }
 }
 .header-container {
@@ -155,6 +161,14 @@ body {
   text-decoration: none;
   font-size: 2rem;
   color: #ffffff;
+}
+@media (max-width: 700px) {
+  .logo {
+    padding-left: 10px;
+  }
+}
+.logo a {
+  padding-top: 100px;
 }
 .du-logo {
   height: 32px;
