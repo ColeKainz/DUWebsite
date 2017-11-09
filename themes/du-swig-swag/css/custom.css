@@ -154,6 +154,7 @@ body {
 }
 .body a:link,
 .body a:visited {
+  text-decoration: none;
   color: #4169e1;
 }
 /* Content Styling */
