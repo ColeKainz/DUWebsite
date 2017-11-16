@@ -1,0 +1,295 @@
+/* Core Stuff */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+html {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+body {
+}
+
+/* Utility Classes */
+@media screen and (max-width: 700px){	
+	.main-nav {
+		width: 380px;
+		height: 100%;
+		float: left;
+		z-index: 10;
+		
+		background-color: #ffffff;
+		border-right: 1px solid #f0f0f0;
+		
+		position: fixed;
+		overflow: hidden;
+		
+		left: -380px;
+		
+		display: flex;
+		flex-direction: row;
+		
+		margin-right: 10px;
+	}
+	
+	.expand-nav {
+		left: 10px;
+		height: 40px;
+		
+		position: absolute;
+	}
+	
+	.main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		background-color: #f0f0f0;
+	}
+
+	.center-container{
+		width: 100%;
+		margin-top: 60px;
+	}
+
+	.header {
+		width: 100%;
+	}
+
+	.header-container {
+		background: #000000;
+		color: #ffffff;
+		
+		height: 50px;
+		width: 100%;
+
+		left: 0;
+		position: fixed;
+		
+		padding-top: 5px;
+		padding-bottom: 5px;
+		
+		text-align: center;
+	}
+	
+	.body {
+		font-size: 1rem;
+		line-height: 1.7;
+		text-align: left;
+		
+		overflow: hidden;
+		padding: 10px;
+		padding-left: 20px;
+		
+		background-color: #ffffff;
+	}
+}
+
+@media screen and (min-width: 700px){
+	.main-nav {
+		width: 200px;
+		float: left;
+		
+		margin-right: 10px;
+	}
+	
+	.expand-nav {
+		display: none;
+	}
+
+	.header-container {
+		background: #000000;
+		color: #ffffff;
+		
+		height: 50px;
+		width: 100%;
+
+		left: 0;
+		position: absolute;
+		
+		padding-top: 5px;
+		padding-bottom: 5px;
+		
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.header {
+		width: 100%;
+		padding-left: 215px;
+	}
+}
+
+@media screen and (min-width: 700px) and (max-width: 1160px){	
+	.main {
+		display: flex;
+		flex-direction: column;
+		align-items: left;
+
+		background-color: #f0f0f0;
+	}
+
+	.center-container{
+		width: 100%;
+		
+		margin-bottom: 20px;
+		margin-top: 60px;
+	}
+
+	.body {
+		font-size: 1rem;
+		line-height: 1.7;
+		text-align: left;
+		
+		overflow: hidden;
+		
+		padding: 10px;
+		
+		background-color: #ffffff;
+	}
+}
+
+@media screen and (min-width: 1160px) and (max-width: 1386px){	
+	.main {
+		display: flex;
+		flex-direction: column;
+		align-items: left;
+
+		background-color: #f0f0f0;
+	}
+
+	.center-container{
+		width: 1160px;
+		
+		margin-bottom: 20px;
+		margin-top: 60px;
+	}
+
+	.body {
+		font-size: 1rem;
+		line-height: 1.7;
+		text-align: left;
+		
+		overflow: hidden;
+		width: 940px;
+		
+		padding: 10px;
+		
+		background-color: #ffffff;
+	}
+}
+
+/* Screen size plus margin plus scroll bar size
+screen size < content size + scrollbar*/
+@media screen and (min-width: 1386px) {
+	.main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		background-color: #f0f0f0;
+	}
+	
+	.center-container{
+		width: 1360px;
+		
+		margin-bottom: 20px;
+		margin-top: 60px;	
+	}
+
+	.header {
+		width: 940px;
+		padding-left: 0px;
+	}
+	
+	.body {
+		font-size: 1rem;
+		line-height: 1.7;
+		text-align: left;
+		
+		overflow: hidden;
+		width: 940px;
+		
+		margin-right: 200px;
+		margin-left: 200px;
+		padding: 10px;
+		
+		background-color: #ffffff;
+	}
+}
+
+/* Content Styling */
+
+
+.logo {
+	color: #cccc33;
+	text-decoration: none;
+	
+	font-size: 2rem;
+}
+
+.du-logo {
+	height: 32px;
+	width: 32px;
+	
+	margin-top:5px;
+	
+	background-color: #cccc33
+}
+
+/* Menu Settings */
+.main-nav ul {
+	width: 100%;
+	
+	margin-top: 0px;
+	padding-left: 0px;
+	
+	list-style-type: none;
+	background-color: #f0f0f0;
+}
+
+.main-nav ul li {
+    letter-spacing: normal;
+	text-align: left;
+	
+	padding-left: 10px;
+	padding-top: 5px;
+		
+	height: 30px;
+	width: 100%;
+	
+	background-color: #f0f0f0;
+	
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.main-nav ul li:hover {
+    background-color: #fbfbfb;
+}
+
+.main-nav ul li:active {
+    background-color: #e0e0e0;
+}
+
+.main-nav .selected{
+    background-color: #fbfbfb;
+	
+	font-weight: bold;
+}
+
+.main-nav ul a {
+	display:block;
+	
+	height: 30px;
+
+    color: #000000;
+	text-decoration: none;
+}f

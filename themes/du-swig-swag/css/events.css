@@ -1,0 +1,44 @@
+#eventsTable{
+	border-collapse: collapse;
+	border-style: none;
+}
+
+tr, td{
+	border-collapse: collapse;
+	border-style: none;
+	
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+}
+
+.eventsPicture{
+	width: 200px;
+	top: 5px;
+	vertical-align: top;
+}
+
+@media screen and (max-width: 700px){
+	.eventsPicture{
+		display: none;
+	}
+}
+.eventsContent{
+	vertical-align: top;
+	padding-left: 10px;
+}
+
+.eventsContent, .eventsPicture{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.contentHeader{
+	display: flex;
+	justify-content: space-between;
+}
+
+.contentDesc{
+	font-size: 12px;
+}
+
+
