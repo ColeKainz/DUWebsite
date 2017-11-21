@@ -2,12 +2,18 @@
 	border-collapse: collapse;
 	border-style: none;
 	table-layout: fixed;
+	
+	margin-left: -50px;
 }
 
 #membersTable td {
 	border-style: none;
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+.memberImg {
+	border: #000000 2px solid;
 }
 
 .memberName {

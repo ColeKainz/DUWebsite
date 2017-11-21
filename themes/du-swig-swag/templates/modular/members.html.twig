@@ -4,7 +4,7 @@
 {{ assets.css() }}
 
 <div id="container">
-	<table border='1' width='100%' id="membersTable">
+	<table width='100%' id="membersTable">
 
 	</table>
 </div>
@@ -67,7 +67,7 @@
 		switch (col){
 			case 1:
 				cell.innerHTML =	'<div class="memberDis">'
-								+		'<img src="' + president.pic + '"/>'
+								+		'<img class="memberImg" src="' + president.pic + '"/>'
 								+		'<p class="memberName">' + president.name + '</p>'							
 								+		'<p class="memberPos">' + positionToList(president.position) + '</p>'
 								+	'</div>';
@@ -78,7 +78,7 @@
 				cell2.align = "center";
 				
 				cell.innerHTML = 	'<div class="memberDis">'
-								+		'<img src="' + president.pic + '"/>'
+								+		'<img class="memberImg" src="' + president.pic + '"/>'
 								+		'<p class="memberName">' + president.name + '</p>'							
 								+		'<p class="memberPos">' + positionToList(president.position) + '</p>'
 								+	'</div>';
@@ -95,7 +95,7 @@
 				cell3.align = "center";
 				
 				cell.innerHTML = 	'<div class="memberDis">'
-								+		'<img src="' + president.pic + '"/>'
+								+		'<img class="memberImg" src="' + president.pic + '"/>'
 								+		'<p class="memberName">' + president.name + '</p>'							
 								+		'<p class="memberPos">' + positionToList(president.position) + '</p>'
 								+	'</div>';
@@ -127,7 +127,7 @@
 			cell.align = "center";
 			cell.className = "member";
 			cell.innerHTML =	'<div class="memberDis">'
-							+		'<img src="' + members[i].pic + '"/>'
+							+		'<img class="memberImg" src="' + members[i].pic + '"/>'
 							+		'<p class="memberName">' + members[i].name + '</p>'
 							+		'<p class="memberPos">' + positionToList(members[i].position) + '</p>'
 							+	'</div>';
