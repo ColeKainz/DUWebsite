@@ -11,16 +11,18 @@
 
 <script type="text/javascript">
 	var president = {
-		name: "{{header.president.name}}",
+		name: "{{ header.president.name }}",
 		
 		position: [
-		{% for pos in header.member.position %}
+		{% for pos in header.president.position %}
 			"{{ pos }}",
 		{% endfor %}
 		],
 		
 		{% set twigPic = (header.president.picture |first).name %}
+		
 		pic: "{{ page.media[twigPic].cropZoom(200, 325).url }}",
+		bio: "{{ header.president.bio }}",
 	}
 	
 	var members = [
@@ -44,8 +46,7 @@
 	var memDisplayWidth = 250;
 	
 	function displayTable() {	
-		console.log("explosion");
-		var col = parseInt(parseInt($('#container').width()) / memDisplayWidth);
+		col = parseInt(parseInt($('#container').width()) / memDisplayWidth);
 		var table = $('#membersTable')[0];
 		var rowCount = 0;
 		var cellCount = 0; //Does not include president.
@@ -59,32 +60,56 @@
 		var cell = row.insertCell(0);
 		cell.align = "center";
 		cell.className = "memberPresident";
-		cell.colSpan = col;
+				
+		console.log(col);
+
+		
 		switch (col){
 			case 1:
-				cell.innerHTML =	'<div class="presDis">'
+				cell.innerHTML =	'<div class="memberDis">'
 								+		'<img src="' + president.pic + '"/>'
-								+		'<p class="presName">' + president.name + '</p>'							
-								+		'<p class="presPos">' + positionToList(president.position, false) + '</p>'
+								+		'<p class="memberName">' + president.name + '</p>'							
+								+		'<p class="memberPos">' + positionToList(president.position) + '</p>'
 								+	'</div>';
+				break;
+				
 			case 2:
-				cell.innerHTML =	'<div class="presDis">'
+				var cell2 = row.insertCell(1)
+				cell2.align = "center";
+				
+				cell.innerHTML = 	'<div class="memberDis">'
 								+		'<img src="' + president.pic + '"/>'
-								+		'<div class="presInfo">'
-								+			'<p class="presTitle">President</p>'			
-								+			'<p class="presName">' + president.name + '</p>'
-								+			'<p class="presPos">' + positionToList(president.position, true) + '</p>'
-								+		'</div>'
+								+		'<p class="memberName">' + president.name + '</p>'							
+								+		'<p class="memberPos">' + positionToList(president.position) + '</p>'
 								+	'</div>';
+				cell2.innerHTML =	'<div class="presBio">'
+								+			'<p>' + president.bio + '</p>'
+								+	'</div>';
+				break;
+				
 			case 3:
-				cell.innerHTML =	'<div class="presDis">'
+				var cell2 = row.insertCell(1);
+				cell2.align = "center";
+				
+				var cell3 = row.insertCell(2);
+				cell3.align = "center";
+				
+				cell.innerHTML = 	'<div class="memberDis">'
 								+		'<img src="' + president.pic + '"/>'
-								+		'<div class="presInfo">'
-								+			'<p class="presTitle">President</p>'			
-								+			'<p class="presName">' + president.name + '</p>'
-								+			'<p class="presPos">' + positionToList(president.position, true) + '</p>'
-								+		'</div>'
+								+		'<p class="memberName">' + president.name + '</p>'							
+								+		'<p class="memberPos">' + positionToList(president.position) + '</p>'
 								+	'</div>';
+				
+				cell2.innerHTML = '<div class="presBio" id="bioCell">'
+								+	'</div>';
+								
+				$('#bioCell').text(president.bio);
+				$('#bioCell').attr('alt', president.bio);
+							
+				cell3.innerHTML =	'<div class="memberDis">'
+								+			'<img src="{{url("theme://images/DU-Crest.png")}}" width="200" height="235"/>'
+								+	'</div>';
+				break;
 		}
 		
 		for(i=0; i<members.length; i++){				
@@ -104,20 +129,17 @@
 			cell.innerHTML =	'<div class="memberDis">'
 							+		'<img src="' + members[i].pic + '"/>'
 							+		'<p class="memberName">' + members[i].name + '</p>'
-							+		'<p class="memberPos">' + positionToList(members[i].position, false) + '</p>'
+							+		'<p class="memberPos">' + positionToList(members[i].position) + '</p>'
 							+	'</div>';
 							
 			cellCount++;
 		}
 	}
 	
-	function positionToList(positionArr, presidentDis){
+	function positionToList(positionArr){
 		var pos = "";
-
-		//Skip the president position.
-		var start = presidentDis ? 1 : 0;
 		
-		for(j=start; j<positionArr.length; j++){
+		for(j=0; j<positionArr.length; j++){
 			pos += positionArr[j];
 			
 			//Don't add a comma for the last position.
