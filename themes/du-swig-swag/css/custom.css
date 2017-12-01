@@ -14,16 +14,20 @@
 html {
   overflow-y: scroll;
   overflow-x: hidden;
-  /*this does gradient don't touch*/
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+25,000000+75,000000+100&0.25+0,0+25,0+75,0.35+100 */
-  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.35) 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.35) 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.35) 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40000000', endColorstr='#59000000', GradientType=1);
-  /* IE6-9 */
+}
+@media (min-width: 1386px) {
+  html {
+    /*this does gradient don't touch*/
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+25,000000+75,000000+100&0.25+0,0+25,0+75,0.25+100 */
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#40000000', endColorstr='#40000000', GradientType=1);
+    /* IE6-9 */
+  }
 }
 body {
   /*background-image: url("../images/background.jpg");*/
@@ -32,7 +36,7 @@ body {
   font-size: 1.1rem;
   font-family: "zing";
 }
-@media (max-width: 700px) {
+@media (max-width: 699px) {
   .main-nav {
     width: 200px;
     height: 100%;
@@ -177,6 +181,11 @@ body {
     padding-left: 10px;
   }
 }
+@media (max-width: 350px) {
+  .logo {
+    padding-left: 40px;
+  }
+}
 .logo a {
   padding-top: 100px;
 }
@@ -185,6 +194,11 @@ body {
   width: 32px;
   margin-top: 5px;
   background-color: #ffffff;
+}
+@media (max-width: 390px) {
+  .du-logo {
+    display: none;
+  }
 }
 .blue a:link,
 .blue a:visited {

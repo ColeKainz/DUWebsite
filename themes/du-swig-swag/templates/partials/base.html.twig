@@ -25,6 +25,18 @@
     {% endblock %}
     {{ assets.js() }}
 	
+	<script>
+		less = {
+			env: "development"
+		};
+	</script>
+	
+	<script src="{{url("theme://javascript/less.js-master/dist/less.js")}}">
+		less.modifyVars({
+			'@screenWidth': screen.width
+		});
+	</script>
+	
 	<script type="text/javascript">
 		var showMenu = false;
 		
