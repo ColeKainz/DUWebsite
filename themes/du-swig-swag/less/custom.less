@@ -66,12 +66,9 @@ body {
 		background-color: @mainNavBack;
 			
 		position: fixed;
-		overflow: hidden;
+		overflow: auto;
 			
 		left: -380px;
-			
-		display: flex;
-		flex-direction: row;
 			
 		margin-right: 10px;
 		
@@ -85,11 +82,16 @@ body {
 		float: left;
 		
 		margin-right: 10px;
+		margin-top: 30px;
 		
 		border-style: solid;
 		border-width: 0 2px 0 0;
 		border-color: @headerBack;
 	}
+}
+
+.main-nav::-webkit-scrollbar {
+    display: none;
 }
 
 .expand-nav {
@@ -246,9 +248,11 @@ body {
 }
 
 /* Menu Settings */
-@navItemSelected: 	transparent;
+@navItemSelected: 	#4169e1;
+@navItemHover:		#a1c9f1;
 @navItemFont:		#4169e1;
 @navItemSep:		#f0f0f0;
+
 .main-nav ul {
 	width: 100%;
 	
@@ -260,6 +264,8 @@ body {
 }
 
 .main-nav ul li {
+	display: inline-block;
+
     letter-spacing: normal;
 	text-align: right;
 	
@@ -268,26 +274,30 @@ body {
 		
 	height: 30px;
 	width: 100%;
-		
-	border-top: 1px solid @navItemSep;
 }
 
-.main-nav a:hover,  .main-nav a:visited{
-    background-color: @navItemSelected;
-	color: @navItemFont;
+.main-nav a:hover {
+    background-color: @navItemHover;
+	color: @headerCol;
+	
+	border-radius: 5px;
 }
 
 .main-nav a .selected{
     background-color: @navItemSelected;
-	color: @navItemFont;
-	font-weight: bold;
+	color: @headerCol;
+	
+	border-radius: 5px;
 }
 
 .main-nav ul a {
-	display:block;
+	display: block;
 	
-	height: 30px;
-
     color: @navItemFont;
 	text-decoration: none;
+	
+	margin-right: 5px;
+	margin-left: 5px;
+	
+	margin-top: 5px;
 }

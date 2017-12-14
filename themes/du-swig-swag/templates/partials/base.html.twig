@@ -40,37 +40,47 @@
 	<script type="text/javascript">
 		var showMenu = false;
 		
+		menuFocus = function(e) {
+			if(e) {
+				e.preventDefault();
+			}
+			$('#nav').focus();
+		}
+		
+		menuUnFocus = function() {
+			$('body').focus();
+		}
+		
 		onBodyClick = function() {
 			$('#nav').css('left', -380);
 			$('#expand-button').attr("src","{{url("theme://images/mobile-menu.png")}}");
 			showMenu = false;
-		}
-	
-		window.onscroll = function(e) {
-			var distance = $(window).scrollTop();
-			
-			//Header height plus margin offset
-			if($(window).width() > 688) {
-				if(distance > 50) {
-					//Subtract header height, add margin offset
-					$('#nav').css('margin-top',distance - 50);
-				} else {
-					$('#nav').css('margin-top',0);
-				}
-			}
 		}
 
 		scrollMenu = function() {
 			if(showMenu){
 				$('#nav').css('left', -380);
 				$('#expand-button').attr("src","{{url("theme://images/mobile-menu.png")}}");
+				menuUnFocus();
 				showMenu = false;
 			}else{
 				$('#nav').css('left', 0);
 				$('#expand-button').attr("src","{{url("theme://images/mobile-menu-close.png")}}");
+				menuFocus();
 				showMenu = true;
 			}
 		}
+		
+		$(function() {
+			
+			$('#nav').mouseenter(function(e) {
+				menuFocus(e);
+			});
+			
+			$('#nav').mouseleave(function() {
+				menuUnFocus();
+			});
+		})
 	</script>
 
 {% endblock head%}
