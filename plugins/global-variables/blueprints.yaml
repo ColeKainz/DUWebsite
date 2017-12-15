@@ -1,0 +1,63 @@
+name: Global Variables
+version: 0.1.0
+description: Global variables for the site.
+icon: plug
+author:
+  name: Cole Kaaaaaainz
+  email: sir.ninjabot@gmail.com
+homepage: https://github.com/cole-kainz/grav-plugin-global-variables
+demo: http://demo.yoursite.com
+keywords: grav, plugin, etc
+bugs: https://github.com/cole-kainz/grav-plugin-global-variables/issues
+docs: https://github.com/cole-kainz/grav-plugin-global-variables/blob/develop/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    text_var:
+      type: text
+      label: Text Variable
+      help: Text to add to the top of a page
+    section:
+      type: section
+      title: Variables
+      fields:
+      
+        social_links:
+          type: list
+          label: Social Media
+          name: socialMedia
+          style: vertical
+            
+          fields:
+            .url:
+              type: text
+              label: URL
+            .icon:
+              type: file
+              label: Icon
+              destination: 'user/themes/du-swig-swag/images/icons/'
+              multiple: false
+              accept:
+                - image/*
+            .enabled:
+              type: toggle
+              label: Show
+              highlight: 1
+              default: 1
+              options:
+                1: Enable
+                0: Disable
+              validate:
+                type: bool

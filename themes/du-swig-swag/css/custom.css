@@ -117,6 +117,12 @@ body {
     padding-left: 230px;
   }
 }
+@media (min-width: 1160px) {
+  .header {
+    padding-left: 230px;
+    width: 1150px;
+  }
+}
 @media (min-width: 1386px) {
   .header {
     width: 940px;
@@ -143,8 +149,13 @@ body {
     position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     text-align: left;
+  }
+}
+@media (min-width: 1386px) {
+  .header-container {
+    align-items: center;
   }
 }
 .body {
@@ -188,9 +199,6 @@ body {
     padding-left: 40px;
   }
 }
-.logo a {
-  padding-top: 100px;
-}
 .du-logo {
   height: 32px;
   width: 32px;
@@ -201,6 +209,23 @@ body {
   .du-logo {
     display: none;
   }
+}
+.media-links {
+  float: right;
+  padding-right: 10px;
+  padding-top: 8px;
+}
+@media (max-width: 700px) {
+  .media-links {
+    display: none;
+  }
+}
+.link-button {
+  padding-right: 5px;
+}
+.link-icon {
+  height: 24px;
+  width: 24px;
 }
 .blue a:link,
 .blue a:visited {

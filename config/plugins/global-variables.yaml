@@ -1,0 +1,21 @@
+enabled: true
+text_var: 'Custom Text added by the **Global Variables** plugin (disable plugin to remove)'
+social_links:
+  -
+    url: 'https://www.getfucked.com'
+    enabled: true
+    icon:
+      user/themes/du-swig-swag/images/icons/twitter-logo.png:
+        name: twitter-logo.png
+        type: image/png
+        size: 11753
+        path: user/themes/du-swig-swag/images/icons/twitter-logo.png
+  -
+    url: 'https://www.facebook.com/DeltaUpsilonNdsu/'
+    enabled: true
+    icon:
+      user/themes/du-swig-swag/images/icons/facebook-logo.png:
+        name: facebook-logo.png
+        type: image/png
+        size: 2586
+        path: user/themes/du-swig-swag/images/icons/facebook-logo.png

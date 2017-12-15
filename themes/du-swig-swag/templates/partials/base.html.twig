@@ -94,6 +94,16 @@
 				<img src="{{url("theme://images/DU-Logo.png")}}" class="du-logo" align="top"/>
 				{{ config.site.title }}
 			</a>
+			
+			<div class="media-links">
+				{% for link in globals.social_links %}
+					{% if link.enabled %}
+						<a class="link-button" href="{{ link.url }}">
+							<img src="{{(link.icon | first).path}}" class="link-icon"/>
+						</a>
+					{% endif %}
+				{% endfor %}
+			</div>
 		</div>
     </header>
 {% endblock %}
