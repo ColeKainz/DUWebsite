@@ -43,9 +43,6 @@ form:
       -
           type: submit
           value: Submit
-      -
-          type: reset
-          value: Reset
 
   process:
       register_user: true

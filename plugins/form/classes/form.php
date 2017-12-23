@@ -370,8 +370,8 @@ class Form extends Iterator implements \Serializable
         $uri = $grav['uri']->url;
         $config = $grav['config'];
         $session = $grav['session'];
-
-        $settings = $this->data->blueprints()->schema()->getProperty($post['name']);
+		
+        $settings = $this->data->blueprints()->schema()->getProperty($post['name']);		
         $settings = (object) array_merge(
             ['destination' => $config->get('plugins.form.files.destination', 'self@'),
              'avoid_overwriting' => $config->get('plugins.form.files.avoid_overwriting', false),

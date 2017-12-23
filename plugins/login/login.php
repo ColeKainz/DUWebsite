@@ -325,7 +325,6 @@ class LoginPlugin extends Plugin
         if (!$page) {
             $page = new Page;
             $page->init(new \SplFileInfo(__DIR__ . '/pages/register.md'));
-            $page->template('form');
             $page->slug(basename($route));
 
             $pages->addPage($page, $route);
@@ -748,8 +747,51 @@ class LoginPlugin extends Plugin
     private function processUserProfile($form)
     {
         $user = $this->grav['user'];
-        $user->merge($form->getData()->toArray());
-
+		
+		//This is a hack, dont judge.
+		$arr = $form->getData()->toArray();
+		
+		foreach($arr as $key=>$value) {
+			if(is_array($value)){
+				foreach($value as $key1=>$value1){
+					if(is_array($value1)){
+						foreach($value1 as $key2=>$value2){
+							file_put_contents("out.txt", $key." ".$key1." ".$key2." ".$value2."\n");
+						}
+					} else {
+						file_put_contents("out.txt", $key." ".$key1." ".$value1."\n");
+					}
+				}
+			} else {
+				file_put_contents("out.txt", $key." ".$value."\n");
+			}
+		}
+				
+		if (array_key_exists('avatar', $arr)) {
+			$avatar = $arr['avatar'];
+						
+			$file = array_values($avatar)[0];
+			$dirPath = dirname($file['path']);
+			
+			$newName = $user['username'].".png";
+			$newPath = $dirPath."/".$newName;
+						
+			imagepng(imagecreatefromstring(file_get_contents($file['path'])), $newPath);
+			
+			unlink($file['path']);
+			unset($arr['avatar']);
+			
+			$avatar = array();
+			$avatar[$newPath]['name'] = $newName;
+			$avatar[$newPath]['type'] = "image/png";
+			$avatar[$newPath]['size'] = filesize($newPath);
+			$avatar[$newPath]['path'] = $newPath;
+			
+			$arr['avatar'] = $avatar;
+		}
+		
+        $user->merge($arr);
+		
         try {
             $user->save();
         } catch (\Exception $e) {

@@ -5,34 +5,125 @@ access:
     
 form:
   fields:
-    avatar_img:
-      type: avatar
-  
-    username:
-      type: text
-      readonly: true
-      disabled: true
+    profile:
+	  type: fieldset
+      legend: Profile
+      id: "profile"  
 
-    email:
-      type: email
-      placeholder: "Enter your email"
-      validate:
-        required: true
-        message: PLUGIN_LOGIN.EMAIL_VALIDATION_MESSAGE
+      fields:
+        avatar:
+          type: avatar
+          classes: "avatar"
+          destination: user/data/members
+
+        fullname:
+          type: text
+          label: Full Name
+          name: fullname
+          placeholder: "John Smith"
+          outerclasses: "public"
         
-    fullname:
-      type: text
-      
-    title:
-      type: text  
+        major:
+          type: text
+          label: Major
+          name: major
+          placeholder: Computer Science
+          outerclasses: "public"
 
-    password:
-      type: password
-      label: Enter new password
-      validate:
-        message: PLUGIN_LOGIN.PASSWORD_VALIDATION_MESSAGE
-        config-pattern@: system.pwd_regex
+        bio:
+          type: textarea
+          label: Biography
+          name: bio
+          classes: "bioarea"
+          outerclasses: "bio"
 
+        position:
+          type: select
+          size: short
+          label: Position
+          name: position
+          outerclasses: "public"
+          options:
+            test: test
+
+        serviceHours:
+          type: text
+          label: Service Hours
+          name: servicehours
+          placeholder: 0
+          outerclasses: "public"
+
+        dateJoined:
+          type: date
+          label: Date Joined
+          name: datejoined
+          outerclasses: "public"
+  
+        ndsuYear:
+          type: select
+          size: short
+          label: Year
+          name: ndsuYear
+          outerclasses: "public"
+          options:
+            freshman: Freshman
+            sophmore: Sophmore
+            junior: Junior
+            senior: Senior
+	  
+        phoneNumber:
+          type: text
+          label: Phone Number
+          name: phoneNumber
+          outerclasses: "private"
+
+        email:
+          type: email
+          placeholder: "example@example.com"
+          outerclasses: "private"
+          validate:
+            required: true
+            message: PLUGIN_LOGIN.EMAIL_VALIDATION_MESSAGE
+
+        address:
+          type: text
+          size: long
+          label: Address
+          name: address
+          outerclasses: "private"
+        
+        inHouse:
+          type: checkbox
+          label: In house
+          name: inHouse
+          outerclasses: "private"
+
+        emergancyContact:
+          type: text
+          label: Emergancy Contant
+          name: emergancyContact
+          outerclasses: "private"
+
+        emergancyPhoneNumber:
+          type: text
+          label: Contact's Phone Number
+          name: emergancyPhoneNumber
+          outerclasses: "private"
+
+        emergancyAddress:
+          type: text
+          size: long
+          label: Contanct's Address
+          name: emergancyAddress
+          outerclasses: "private"
+
+        password:
+          type: password
+          label: New password
+          outerclasses: "private"
+          validate:
+            message: PLUGIN_LOGIN.PASSWORD_VALIDATION_MESSAGE
+            config-pattern@: system.pwd_regex
 
   buttons:
       -
@@ -46,5 +137,3 @@ form:
       update_user: true
       message: "Your profile has been updated"
 ---
-
-# Profile

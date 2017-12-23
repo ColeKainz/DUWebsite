@@ -2,6 +2,7 @@ enabled: true
 text_var: 'Custom Text added by the **Global Variables** plugin (disable plugin to remove)'
 social_links:
   -
+    name: Twitter
     url: 'https://www.getfucked.com'
     enabled: true
     icon:
@@ -10,7 +11,14 @@ social_links:
         type: image/png
         size: 11753
         path: user/themes/du-swig-swag/images/icons/twitter-logo.png
+    mobile_icon:
+      user/themes/du-swig-swag/images/icons/twitter-logo-mobile.png:
+        name: twitter-logo-mobile.png
+        type: image/png
+        size: 11740
+        path: user/themes/du-swig-swag/images/icons/twitter-logo-mobile.png
   -
+    name: Facebook
     url: 'https://www.facebook.com/DeltaUpsilonNdsu/'
     enabled: true
     icon:
@@ -19,3 +27,45 @@ social_links:
         type: image/png
         size: 2586
         path: user/themes/du-swig-swag/images/icons/facebook-logo.png
+    mobile_icon:
+      user/themes/du-swig-swag/images/icons/facebook-logo-mobile.png:
+        name: facebook-logo-mobile.png
+        type: image/png
+        size: 1897
+        path: user/themes/du-swig-swag/images/icons/facebook-logo-mobile.png
+house:
+  url: 'https://www.google.com/maps/place/1258+12th+St+N,+Fargo,+ND+58102/@46.8924'
+  icon:
+    user/themes/du-swig-swag/images/icons/location.png:
+      name: location.png
+      type: image/png
+      size: 1598
+      path: user/themes/du-swig-swag/images/icons/location.png
+  enabled: true
+  name: House
+  mobile_icon:
+    user/themes/du-swig-swag/images/icons/location-mobile.png:
+      name: location-mobile.png
+      type: image/png
+      size: 2238
+      path: user/themes/du-swig-swag/images/icons/location-mobile.png
+signin:
+  enabled: true
+  icon:
+    user/themes/du-swig-swag/images/icons/signin.png:
+      name: signin.png
+      type: image/png
+      size: 2110
+      path: user/themes/du-swig-swag/images/icons/signin.png
+  mobile_icon:
+    user/themes/du-swig-swag/images/icons/signin.png:
+      name: signin.png
+      type: image/png
+      size: 2110
+      path: user/themes/du-swig-swag/images/icons/signin.png
+  signout_icon:
+    user/themes/du-swig-swag/images/icons/signout.png:
+      name: signout.png
+      type: image/png
+      size: 2458
+      path: user/themes/du-swig-swag/images/icons/signout.png

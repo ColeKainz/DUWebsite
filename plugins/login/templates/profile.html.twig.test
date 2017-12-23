@@ -1,0 +1,35 @@
+{% extends 'partials/base.html.twig' %}
+
+{% do form.setAllData(grav.user.toArray) %}
+
+{% block content %}
+    {% include 'partials/messages.html.twig' %}
+    {{ page.content }}
+	
+	<script src="https://apis.google.com/js/api.js"></script>
+	<script>
+	function start() {
+		gapi.client.init({
+			'apiKey': '{{ googlesheets.api_key }}',
+			'clientId': '{{ googlesheets.client_id }}',
+			'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+			'scope': 'https://www.googleapis.com/auth/spreadsheets.readonly',
+		}).then(function () {
+          userTable();
+        });
+	};
+
+	gapi.load('client', start);
+	
+	function userTable() {
+		gapi.client.sheets.spreadsheets.values.get({
+			spreadsheetId: '1cBbWDHKXURJFOhW1nzJovkJcBdxxPpWAGMkBnbo2t-I', //user sheet
+			range: 'A1:B' //range to read from table
+		}).then(function(response) {
+			var result = response.result;
+			var numRows = result.values ? result.values.length : 0;
+			console.log(response.result);
+		});
+	}
+	</script>
+{% endblock %}

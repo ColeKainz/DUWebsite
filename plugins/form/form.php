@@ -266,7 +266,7 @@ class FormPlugin extends Plugin
         $params = $event['params'];
 
         $this->process($form);
-
+		
         switch ($action) {
             case 'captcha':
                 if (isset($params['recaptcha_secret'])) {

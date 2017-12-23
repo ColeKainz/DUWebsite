@@ -31,7 +31,7 @@ form:
       help: Text to add to the top of a page
     section:
       type: section
-      title: Variables
+      title: Navigation Buttons
       fields:
       
         social_links:
@@ -41,6 +41,9 @@ form:
           style: vertical
             
           fields:
+            .name:
+              type: text
+              label: Site name
             .url:
               type: text
               label: URL
@@ -51,9 +54,70 @@ form:
               multiple: false
               accept:
                 - image/*
+            .mobile_icon:
+              type: file
+              label: Mobile icon
+              destination: 'user/themes/du-swig-swag/images/icons/'
+              multiple: false
+              accept:
+                - image/*
             .enabled:
               type: toggle
               label: Show
+              highlight: 1
+              default: 1
+              options:
+                1: Enable
+                0: Disable
+              validate:
+                type: bool
+        house.name:
+          type: text
+          label: Mobile name
+        house.url:
+          type: text
+          label: Link to house location (Google Maps)
+        house.icon:
+          type: file
+          label: House icon
+          destination: 'user/themes/du-swig-swag/images/icons/'
+          multiple: false
+          accept:
+              - image/*
+        house.mobile_icon:
+              type: file
+              label: Mobile icon
+              destination: 'user/themes/du-swig-swag/images/icons/'
+              multiple: false
+              accept:
+                - image/*
+        house.enabled:
+              type: toggle
+              label: Show hosue location
+              highlight: 1
+              default: 1
+              options:
+                1: Enable
+                0: Disable
+              validate:
+                type: bool
+        signin.icon:
+          type: file
+          label: Sign in icon
+          destination: 'user/themes/du-swig-swag/images/icons/'
+          multiple: false
+          accept:
+            - image/*
+        signin.signout_icon:
+              type: file
+              label: Sign out icon
+              destination: 'user/themes/du-swig-swag/images/icons/'
+              multiple: false
+              accept:
+                - image/*
+        signin.enabled:
+              type: toggle
+              label: Show signin
               highlight: 1
               default: 1
               options:

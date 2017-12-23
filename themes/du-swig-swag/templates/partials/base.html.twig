@@ -17,6 +17,7 @@
         {% do assets.addCss('http://yui.yahooapis.com/pure/0.6.0/pure-min.css', 100) %}
         {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 99) %}
         {% do assets.addCss('theme://css/custom.css', 98) %}
+		{% do assets.addCss('theme://css/profile.css', 100) %}
     {% endblock %}
     {{ assets.css() }}
 
@@ -38,6 +39,33 @@
 	</script>
 	
 	<script type="text/javascript">
+		var imgLinks = {};
+		{% for link in globals.social_links %}
+			{% if link.enabled %}
+				imgLinks["{{ loop.index0 }}"] = {};
+				imgLinks["{{ loop.index0 }}"][0] = "{{ (link.icon | first).path }}";
+				imgLinks["{{ loop.index0 }}"][1] = "{{ (link.mobile_icon | first).path }}";
+			{% endif %}
+		{% endfor %}
+		
+		{% if globals.house.enabled %}
+			imgLinks["house"] = {};
+			imgLinks["house"][0] = '{{ (globals.house.icon | first).path }}';
+			imgLinks["house"][1] = '{{ (globals.house.mobile_icon | first).path }}';
+		{% endif %}
+		
+		{% if globals.signin.enabled %}
+			imgLinks["signin"] = {};
+			
+			{% if grav.user.username %}
+				imgLinks["signin"][0] = '{{ (globals.signin.signout_icon | first).path }}';
+				imgLinks["signin"][1] = '{{ (globals.signin.signout_icon | first).path }}';
+			{% else %}
+				imgLinks["signin"][0] = '{{ (globals.signin.icon | first).path }}';
+				imgLinks["signin"][1] = '{{ (globals.signin.icon | first).path }}';
+			{% endif %}
+		{% endif %}
+	
 		var showMenu = false;
 		
 		menuFocus = function(e) {
@@ -80,6 +108,24 @@
 			$('#nav').mouseleave(function() {
 				menuUnFocus();
 			});
+			
+			$('.link').mouseenter(function(e) {
+				target = $(e.target);
+				id = target.attr('id');				
+				index = id.replace('link-','');
+
+				image = target.children('img');
+				image.attr('src', imgLinks[index][0]); 
+			});
+			
+			$('.link').mouseleave(function(e) {
+				target = $(e.target);
+				id = target.attr('id');				
+				index = id.replace('link-','');
+
+				image = target.children('img');
+				image.attr('src', imgLinks[index][1]); 
+			});
 		})
 	</script>
 
@@ -103,6 +149,24 @@
 						</a>
 					{% endif %}
 				{% endfor %}
+				
+				{% if globals.house.enabled %}
+						<a class="link-button" href="{{ globals.house.url }}">
+							<img src="{{(globals.house.icon | first).path}}" class="link-icon"/>
+						</a>
+				{% endif %}
+				
+				{% if globals.signin.enabled %}
+					{% if grav.user.username %}
+						<a class="link-button" href="{{ uri.addNonce((base_url_relative ~ uri.path)|trim('/') ~ '/task' ~ config.system.param_sep ~ 'login.logout', 'logout-form', 'logout-nonce')|e }}">
+							<img src="{{ (globals.signin.signout_icon | first).path }}" class="link-icon"/>
+						</a>
+					{% else %}
+						<a class="link-button" href="/login">
+							<img src="{{ (globals.signin.icon | first).path }}" class="link-icon"/>
+						</a>
+					{% endif %}
+				{% endif %}
 			</div>
 		</div>
     </header>
@@ -110,8 +174,41 @@
 <div class="center-container">
 {% block header_navigation %}
 	<div id="nav" class="main-nav">
-		{% include 'partials/navigation.html.twig' %}
+		<div class="vertical-expand">
+			{% include 'partials/navigation.html.twig' %}
+		
+			<div class="media-nav-links">
+				<ul>
+					{% for link in globals.social_links %}
+						{% if link.enabled %}
+							<a href="{{ link.url }}">
+								<li class="link" id="link-{{ loop.index0 }}"><img src="{{ (link.mobile_icon | first).path }}" class="nav-icon"/>{{ link.name }}</li>
+							</a>
+						{% endif %}
+					{% endfor %}
+					
+					{% if globals.house.enabled %}
+							<a href="{{ globals.house.url }}">
+								<li class="link" id="link-house"><img src="{{ (globals.house.mobile_icon | first).path }}" class="nav-icon"/>{{ globals.house.name }}</li>
+							</a>
+					{% endif %}
+					
+					{% if globals.signin.enabled %}
+						{% if grav.user.username %}
+							<a href="{{ uri.addNonce((base_url_relative ~ uri.path)|trim('/') ~ '/task' ~ config.system.param_sep ~ 'login.logout', 'logout-form', 'logout-nonce')|e }}">
+								<li class="link" id="link-signin"><img src="{{ (globals.signin.signout_icon | first).path }}" class="nav-icon"/>Sign out</li>
+							</a>
+						{% else %}
+							<a href="/login">
+								<li class="link" id="link-signin"><img src="{{ (globals.signin.icon | first).path }}" class="nav-icon"/>Sign in</li>
+							</a>
+						{% endif %}
+					{% endif %}
+				</ul>
+			</div>
+		</div>
 	</div>
+
 {% endblock %}
 
 {% block body %}

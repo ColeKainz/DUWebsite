@@ -6,4 +6,63 @@
     {% include 'partials/messages.html.twig' %}
     {{ page.content }}
     {% include 'forms/form.html.twig' %}
+	
+	<table id="publicTable">
+	</table>
+	
+	<table id="privateTable">
+	</table>
+	
+	<script type="text/javascript">
+		
+		$(function() {
+			profile = $('#profile')[0];
+			publicTable = $('#publicTable')[0];
+			privateTable = $('#privateTable')[0];
+			
+			profile.appendChild(publicTable);
+			profile.appendChild(privateTable);
+			
+			textarea = $('.bioarea')[0];
+			textarea.style.resize = "none";
+			textarea.style.width = "100%";
+			
+			columnWidth = 200;
+			columnCount = parseInt(parseInt($('#profile').width()) / columnWidth);
+			
+			rowCount = 0;
+			row = publicTable.insertRow(rowCount);
+			$('.public').each(function(i, elm){
+				cell = row.insertCell(i % columnCount);
+				cell.appendChild(elm);
+				
+				cell.style.padding = "0px 0px 0px 20px";
+				cell.style.align = "center";
+				
+				if(i % columnCount == columnCount - 1) {
+					rowCount++;
+					row = publicTable.insertRow(rowCount);
+				}
+			});
+			
+			rowCount = 0;
+			row = privateTable.insertRow(rowCount);
+			
+			$('.private').each(function(i, elm){
+				cell = row.insertCell(i % columnCount);
+				cell.appendChild(elm);
+				
+				cell.style.padding = "0px 0px 0px 20px";
+				cell.style.align = "center";
+				
+				
+				
+				if(i % columnCount == columnCount - 1) {
+					rowCount++;
+					row = privateTable.insertRow(rowCount);
+					row.style.margin = "20px 0px 0px 0px";
+				}
+			});
+		})
+	</script>
 {% endblock %}

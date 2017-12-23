@@ -1,0 +1,51 @@
+{% if form is null %}
+    {% set form = grav.session.getFlashObject('form') %}
+{% endif  %}
+
+{% set action = form.action ? base_url ~ form.action : base_url ~ page.route ~ uri.params %}
+
+{% if (action == base_url_relative) %}
+    {% set action = base_url_relative ~ '/' ~ page.slug %}
+{% endif %}
+
+<section id="grav-login">
+	{{ content|raw }}
+	<form method="post" action="{{ action| trim('/', 'right') }}" name="{{ form.name }}">
+
+		{% for field in form.fields %}
+			{% set value = field.name == 'username' ? username : '' %}
+			{% if field.type %}
+				{% include ["forms/fields/#{field.type}/#{field.type}.html.twig", 'forms/fields/text/text.html.twig'] %}
+			{% endif %}
+		{% endfor %}
+
+		{% for button in form.buttons %}
+			{% if button.outerclasses is defined %}<div class=" {{ button.outerclasses }}">{% endif %}
+				{% if button.url %}
+					<a href="{{ button.url starts with 'http' ? button.url : url(button.url) }}">
+				{% endif %}
+				<button
+					{% if button.id %}id="{{ button.id }}"{% endif %}
+					{% block button_classes %}
+					class="{{ form_button_classes ?: 'button' }} {{ button.classes }}"
+					{% endblock %}
+					{% if button.disabled %}disabled="disabled"{% endif %}
+
+					type="{{ button.type|default('submit') }}"
+
+					{% if button.task %}
+						name="task" value="{{ button.task }}"
+					{% endif %}
+				>
+					{{ button.value|t|default('Submit') }}
+				</button>
+				{% if button.url %}
+					</a>
+				{% endif %}
+			{% if button.outerclasses is defined %}</div>{% endif %}
+		{% endfor %}
+		
+		{% include 'forms/fields/uniqueid/uniqueid.html.twig' %}
+		{{ nonce_field('form', 'form-nonce')|raw }}
+	</form>
+</section>

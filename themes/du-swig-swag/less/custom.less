@@ -71,6 +71,7 @@ body {
 		left: -380px;
 			
 		margin-right: 10px;
+		padding-bottom: 30px;
 		
 		-moz-box-shadow: 0 0 8px 0 black;
 		-webkit-box-shadow: 0 0 8px 0 black;
@@ -92,6 +93,13 @@ body {
 
 .main-nav::-webkit-scrollbar {
     display: none;
+}
+
+.vertical-expand {
+	/*Adds padding so the last element of the mobile nav is in view when the nav is scrollable*/
+	@media (max-width: 700px) {
+		margin-bottom: 50px;
+	}
 }
 
 .expand-nav {
@@ -253,8 +261,14 @@ body {
 	
 	padding-right: 10px;
 	padding-top: 8px;
-	
+		
 	@media (max-width: 700px) {
+			display: none;
+	}
+}
+
+.media-nav-links {
+	@media (min-width: 700px) {
 			display: none;
 	}
 }
@@ -266,6 +280,17 @@ body {
 .link-icon {
 	height: 24px;
 	width: 24px;
+}
+
+.nav-icon {
+	display: inline;
+
+	height: 16px;
+	width: 16px;
+		
+	float: left;
+	margin-left: 10px;
+	margin-top: 4px;
 }
 
 .blue a:link, .blue a:visited {
@@ -282,6 +307,7 @@ body {
 	width: 100%;
 	
 	margin-top: 0px;
+	margin-bottom: 0px;
 	padding-left: 0px;
 	
 	list-style-type: none;
@@ -295,7 +321,7 @@ body {
 	text-align: right;
 	
 	padding-right: 7px;
-	padding-top: 5px;
+	padding-top: 2px;
 		
 	width: 100%;
 }
