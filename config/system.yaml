@@ -25,7 +25,7 @@ pages:
   list:
     count: 20
   dateformat:
-    default: 'M jS Y'
+    default: 'j M Y'
     short: 'jS M Y'
     long: 'F jS \a\t g:ia'
   publish_dates: true
