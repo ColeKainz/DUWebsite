@@ -54,13 +54,9 @@ body {
 }
 @media (min-width: 700px) {
   .main-nav {
-    width: 200px;
+    width: 210px;
     float: left;
-    margin-right: 10px;
-    margin-top: 20px;
-    border-style: solid;
-    border-width: 0 2px 0 0;
-    border-color: #4169e1;
+    margin-top: 15px;
   }
 }
 .main-nav::-webkit-scrollbar {
@@ -173,7 +169,6 @@ body {
   text-align: left;
   overflow: hidden;
   padding: 10px;
-  padding-left: 20px;
   background-color: transparent;
 }
 @media (min-width: 1160px) and (max-width: 1386px) {
