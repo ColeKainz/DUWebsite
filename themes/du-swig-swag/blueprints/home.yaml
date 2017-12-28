@@ -1,0 +1,23 @@
+@extends:
+    type: modular
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+            header.pic:
+              type: file
+              label: Photograph
+              multiple: false
+              destination: 'self@'
+              accept:
+                - image/*

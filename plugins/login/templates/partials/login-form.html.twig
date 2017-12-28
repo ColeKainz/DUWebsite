@@ -25,13 +25,11 @@
                 {% endfor %}
 
                 <div class="{{ form_button_outer_classes ?: 'form-actions secondary-accent' }}">
-                    {% if config.plugins.login.rememberme.enabled and page.header.form.login.rememberme ?? true %}
-                        <div class="form-data rememberme" data-grav-default="null" data-grav-disabled="true" data-grav-field="checkbox">
-                            <div class="form-input-wrapper">
-								<a class="{{ form_button_classes ?: 'button secondary' }}" href="{{ base_url_relative }}{{ config.plugins.login.route_register }}">Register</a>
-							</div>
-                        </div>
-                    {% endif %}
+					<div class="form-data register" data-grav-default="null" data-grav-disabled="true" data-grav-field="button">
+						<div class="form-input-wrapper">
+							<a class="{{ form_button_classes ?: 'button secondary' }} label" href="{{ base_url_relative }}{{ config.plugins.login.route_register }}">Register</a>
+						</div>
+					</div>
 
                     {% if page.header.form.login.forgot_button ?? true %}
                     <a class="{{ form_button_classes ?: 'button secondary' }}" href="{{ base_url_relative }}{{ config.plugins.login.route_forgot }}"><i class="fa fa-exclamation-circle"></i> {{ 'PLUGIN_LOGIN.BTN_FORGOT'|t }}</a>

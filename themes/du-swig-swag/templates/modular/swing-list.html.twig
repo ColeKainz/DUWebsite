@@ -1,0 +1,53 @@
+{% block stylesheets %}
+    {% do assets.addCss('theme://css/swing-list.css', 103) %}
+{% endblock %}
+{{ assets.css() }}
+
+<div id="promContainer">
+
+</div>
+
+
+<script type="text/javascript">
+	var proms = [
+	{% for prom in page.header.list %}
+	{
+		innerText: '{{ prom.text |replace({'\n':'<br/>'}) | e('js') }}',
+						
+		{% set twigPic = (prom.picture |first).name %}
+		pic: "{{ page.media[twigPic].cropZoom(200, 200).url }}",
+	},
+	
+	{% endfor %}
+	];
+	
+	function displayProms() {	
+		var container = $('#promContainer');
+				
+		//Refresh container.
+		container.innerHTML = "";
+		
+		for(i=0; i<proms.length; i++){		
+			var promDis = $('<div></div>');				
+			var text = $('<div class="text"></div>');
+			text.append(proms[i].innerText);
+			
+			//If even
+			if(i % 2 == 0) {
+				promDis.append(text);
+				promDis.append('<img class="pic" src="' + proms[i].pic + '" />');
+			
+				promDis.addClass('promWhite');
+			} else {
+				promDis.append('<img class="pic" src="' + proms[i].pic + '" />');
+				promDis.append(text);
+			
+				promDis.addClass('promBlue');
+			}
+			
+			container.append(promDis);
+		}
+	}
+	
+	$(document).ready(displayProms);
+</script>

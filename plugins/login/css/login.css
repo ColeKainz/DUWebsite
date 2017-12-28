@@ -68,16 +68,36 @@
     right: 0;
 }
 
-#grav-login .rememberme {
-    display: inline-block;
+#grav-login .register {
     float: left;
-    padding: 7px 0;
-    vertical-align: middle;
+	
+	-webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+	
+	padding: 0px 10px 0px 10px;
 }
 
-#grav-login .rememberme label {
+#grav-login .register label {
     font-weight: inherit;
-    display: inline;
+}
+
+#grav-login .register a:link,
+#grav-login .register a:hover,
+#grav-login .register a:visited,
+#grav-login .register a:active{
+    font-weight: inherit;
+	color: #000000;
+}
+
+#grav-login .register label {
+    font-weight: inherit;
+}
+
+#grav-login .register label {
+    font-weight: inherit;
 }
 
 .login-status {

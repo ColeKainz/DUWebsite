@@ -1,0 +1,30 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <div id="container">
+		{% set twigPic = (page.header.pic | first).name %}
+		<img id="homeImg" src="{{ page.media[twigPic].cropZoom(910, 225).url }}" width="910px", height="225"/>
+	</div>
+	
+	{% for module in page.collection() %}
+        <div id="{{ _self.pageLinkName(module.menu) }}"></div>
+        {{ module.content }}
+    {% endfor %}
+	{{ page.content }}
+	
+	<script type="text/javascript">
+		img = $('#homeImg');
+	
+		width = parseInt(img.width());
+		height = parseInt(img.height());
+		ratio = height/width;
+		
+		resizeImg = function() {
+			img.css("width", $('#container').width());
+			img.css("height", parseInt(img.width())*ratio);
+		}
+		
+		$(document).ready(resizeImg);
+		$(window).resize(resizeImg);
+	</script>
+{% endblock %}

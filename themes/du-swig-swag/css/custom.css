@@ -57,7 +57,7 @@ body {
     width: 200px;
     float: left;
     margin-right: 10px;
-    margin-top: 30px;
+    margin-top: 20px;
     border-style: solid;
     border-width: 0 2px 0 0;
     border-color: #4169e1;
@@ -223,6 +223,7 @@ body {
   float: right;
   padding-right: 10px;
   padding-top: 8px;
+  list-style-type: none;
 }
 @media (max-width: 700px) {
   .media-links {
@@ -235,7 +236,8 @@ body {
   }
 }
 .link-button {
-  padding-right: 0px;
+  padding-right: 5px;
+  text-decoration: none;
 }
 .link-icon {
   height: 24px;
