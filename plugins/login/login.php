@@ -751,25 +751,11 @@ class LoginPlugin extends Plugin
 		//This is a hack, dont judge.
 		$arr = $form->getData()->toArray();
 		
-		foreach($arr as $key=>$value) {
-			if(is_array($value)){
-				foreach($value as $key1=>$value1){
-					if(is_array($value1)){
-						foreach($value1 as $key2=>$value2){
-							file_put_contents("out.txt", $key." ".$key1." ".$key2." ".$value2."\n");
-						}
-					} else {
-						file_put_contents("out.txt", $key." ".$key1." ".$value1."\n");
-					}
-				}
-			} else {
-				file_put_contents("out.txt", $key." ".$value."\n");
-			}
-		}
-				
+		file_put_contents("out.txt", json_encode($arr));
+		
 		if (array_key_exists('avatar', $arr)) {
 			$avatar = $arr['avatar'];
-						
+			
 			$file = array_values($avatar)[0];
 			$dirPath = dirname($file['path']);
 			

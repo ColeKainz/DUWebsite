@@ -1,0 +1,48 @@
+{% extends 'partials/base.html.twig' %}
+{% do form.setAllData(grav.user.toArray) %}
+
+{% block content %}
+{{ content|raw }}
+
+<form id="user-profile" method="POST" name="user_profile" action="{{ config.plugins.login.route_profile }}" class="{{ form_outer_classes }}">
+	{% for field in form.fields %}
+		{% set value = field.name == 'username' ? username : '' %}
+		{% if field.type %}
+			{% include ["forms/fields/#{field.type}/#{field.type}.html.twig", 'forms/fields/text/text.html.twig'] %}
+		{% endif %}
+	{% endfor %}
+
+	{% include "forms/fields/formname/formname.html.twig" %}
+	
+	<div class="buttonSpace">
+		{% for button in form.buttons %}
+			{% if button.outerclasses is defined %}<div class=" {{ button.outerclasses }}">{% endif %}
+				{% if button.url %}
+					<a href="{{ button.url starts with 'http' ? button.url : url(button.url) }}">
+				{% endif %}
+				<button
+					{% if button.id %}id="{{ button.id }}"{% endif %}
+					{% block button_classes %}
+					class="{{ form_button_classes ?: 'button' }} {{ button.classes }}"
+					{% endblock %}
+					{% if button.disabled %}disabled="disabled"{% endif %}
+
+					type="{{ button.type|default('submit') }}"
+
+					{% if button.value %}
+						name="{{ button.value }}" value="{{ button.value }}"
+					{% endif %}
+				>
+					{{ button.value }}
+				</button>
+				{% if button.url %}
+					</a>
+				{% endif %}
+			{% if button.outerclasses is defined %}</div>{% endif %}
+		{% endfor %}
+	</div>
+	
+	{% include 'forms/fields/uniqueid/uniqueid.html.twig' %}
+    {{ nonce_field('form', 'form-nonce')|raw }}
+</form>
+{% endblock %}

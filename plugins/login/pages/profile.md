@@ -5,82 +5,90 @@ access:
     
 form:
   fields:
-    profile:
-	  type: fieldset
-      legend: Profile
-      id: "profile"  
-
+    avatar:
+      type: avatar
+      classes: "avatar"
+      outerclasses: "avatarDis"
+      dataclasses: "avatarData"
+      destination: user/data/members
+	  
+    public:
+      type: fieldset
+      classes: public
+	  legend: Public Information
       fields:
-        avatar:
-          type: avatar
-          classes: "avatar"
-          destination: user/data/members
 
         fullname:
           type: text
           label: Full Name
           name: fullname
           placeholder: "John Smith"
-          outerclasses: "public"
-        
+          labelclasses: text-label
+          classes: text-style
+
         major:
           type: text
           label: Major
           name: major
           placeholder: Computer Science
-          outerclasses: "public"
-
-        bio:
-          type: textarea
-          label: Biography
-          name: bio
-          classes: "bioarea"
-          outerclasses: "bio"
+          labelclasses: text-label
+          classes: text-style
 
         position:
           type: select
           size: short
           label: Position
           name: position
-          outerclasses: "public"
+          labelclasses: text-label
+          classes: select-style
           options:
-            test: test
 
         serviceHours:
           type: text
           label: Service Hours
           name: servicehours
           placeholder: 0
-          outerclasses: "public"
+          labelclasses: text-label
+          classes: text-style
 
         dateJoined:
           type: date
           label: Date Joined
           name: datejoined
-          outerclasses: "public"
+          labelclasses: text-label
+          classes: text-style
   
         ndsuYear:
           type: select
           size: short
           label: Year
           name: ndsuYear
-          outerclasses: "public"
+          labelclasses: text-label
+          classes: select-style
           options:
-            freshman: Freshman
-            sophmore: Sophmore
-            junior: Junior
-            senior: Senior
+           freshman: Freshman
+           sophmore: Sophmore
+           junior: Junior
+           senior: Senior
 	  
+    private:
+      type: fieldset
+      classes: private
+	  legend: Private Information
+      fields:
+        
         phoneNumber:
           type: text
           label: Phone Number
           name: phoneNumber
-          outerclasses: "private"
+          labelclasses: text-label
+          classes: text-style
 
         email:
           type: email
           placeholder: "example@example.com"
-          outerclasses: "private"
+          labelclasses: text-label
+          classes: text-style
           validate:
             required: true
             message: PLUGIN_LOGIN.EMAIL_VALIDATION_MESSAGE
@@ -90,48 +98,62 @@ form:
           size: long
           label: Address
           name: address
-          outerclasses: "private"
+          labelclasses: text-label
+          classes: text-style
         
         inHouse:
           type: checkbox
           label: In house
           name: inHouse
-          outerclasses: "private"
 
         emergancyContact:
           type: text
           label: Emergancy Contant
           name: emergancyContact
-          outerclasses: "private"
+          labelclasses: text-label
+          classes: text-style
 
         emergancyPhoneNumber:
           type: text
           label: Contact's Phone Number
           name: emergancyPhoneNumber
-          outerclasses: "private"
+          labelclasses: text-label
+          classes: text-style
 
         emergancyAddress:
           type: text
           size: long
           label: Contanct's Address
           name: emergancyAddress
-          outerclasses: "private"
+          labelclasses: text-label
+          classes: text-style
 
         password:
           type: password
           label: New password
-          outerclasses: "private"
+          labelclasses: text-label
+          classes: text-style
           validate:
             message: PLUGIN_LOGIN.PASSWORD_VALIDATION_MESSAGE
             config-pattern@: system.pwd_regex
+    bio:
+      type: textarea
+      label: Biography
+      name: bio
+      classes: "bioarea"
+      outerclasses: "bio"
+      labelclasses: text-label
+      classes: text-style
 
   buttons:
       -
-          type: submit
-          value: Submit
-      -
           type: reset
           value: Reset
+          classes: primary
+      -
+          type: submit
+          value: Submit
+          classes: primary
 
   process:
       update_user: true

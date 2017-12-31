@@ -17,7 +17,7 @@ list:
                 size: 43022
                 path: user/pages/01.home/_promotion/douch.jpg
     -
-        text: '(IF WE WAS TO GO 1 ON 1) AND THE'
+        text: 'SO SOMOA JOE, YOU TAKE YOUR 33 AND A THIRD CHANCE, MINUS MY TWENTY FIVE PERCENT CHANCE, AND YOU''VE GOT AN EIGHT AND A THIRD CHANCE OF WINNING AT SACRIFICE. BUT THEN YOU TAKE MY 75 CHANCE OF WINNING (IF WE WAS TO GO 1 ON 1) AND THEN ADD 66 S PERCENTS'
         picture:
             user/pages/01.home/_promotion/strong.jpg:
                 name: strong.jpg
@@ -25,7 +25,7 @@ list:
                 size: 26129
                 path: user/pages/01.home/_promotion/strong.jpg
     -
-        text: 'DISASTER FOR YOU, AT SACRIFICE!'
+        text: 'I GOT A 141 AND TWO THIRDS CHANCE OF WINNING AT SACRIFICE! SENIOR JOE; THE NUMBERS DON''T LIE, AND THEY SPELL DISASTER FOR YOU, AT SACRIFICE!'
         picture:
             user/pages/01.home/_promotion/cookie.jpg:
                 name: cookie.jpg

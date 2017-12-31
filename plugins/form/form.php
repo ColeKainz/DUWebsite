@@ -177,8 +177,10 @@ class FormPlugin extends Plugin
             // Post the form
             if ($this->form()) {
                 if ($this->grav['uri']->extension() === 'json' && isset($_POST['__form-file-uploader__'])) {
+					file_put_contents("out.txt", "yes");
                     $this->json_response = $this->form->uploadFiles();
                 } else {
+					file_put_contents("out.txt", json_encode($_POST));
                     $this->form->post();
                     $submitted = true;
                 }
@@ -264,9 +266,9 @@ class FormPlugin extends Plugin
         $form = $event['form'];
         $action = $event['action'];
         $params = $event['params'];
-
-        $this->process($form);
 		
+        $this->process($form);
+				
         switch ($action) {
             case 'captcha':
                 if (isset($params['recaptcha_secret'])) {
