@@ -25,19 +25,17 @@
                 {% endfor %}
 
                 <div class="{{ form_button_outer_classes ?: 'form-actions secondary-accent' }}">
-					<div class="form-data register" data-grav-default="null" data-grav-disabled="true" data-grav-field="button">
-						<div class="form-input-wrapper">
-							<a class="{{ form_button_classes ?: 'button secondary' }} label" href="{{ base_url_relative }}{{ config.plugins.login.route_register }}">Register</a>
-						</div>
-					</div>
-
-                    {% if page.header.form.login.forgot_button ?? true %}
-                    <a class="{{ form_button_classes ?: 'button secondary' }}" href="{{ base_url_relative }}{{ config.plugins.login.route_forgot }}"><i class="fa fa-exclamation-circle"></i> {{ 'PLUGIN_LOGIN.BTN_FORGOT'|t }}</a>
-                    {% endif %}
-
                     <button class="{{ form_button_classes ?: 'button primary' }}" type="submit"  name="task" value="login.login"><i class="fa fa-sign-in"></i> {{ 'PLUGIN_LOGIN.BTN_LOGIN'|t }}</button>
+					
+					{% if page.header.form.login.forgot_button ?? true %}
+						<a class="{{ form_button_classes ?: 'button secondary' }}" href="{{ base_url_relative }}{{ config.plugins.login.route_forgot }}"><i class="fa fa-exclamation-circle"></i> Forgot your password?</a>
+					{% endif %}
+					
+					<a href="{{ base_url_relative }}{{ config.plugins.login.route_register }}"><button type="button" class="vspace {{ form_button_classes ?: 'button primary'}}">Register</button></a>
                 </div>
 
+				
+				
                 {{ nonce_field('login-form', 'login-form-nonce')|raw }}
             </form>
 

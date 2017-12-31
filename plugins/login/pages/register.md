@@ -6,12 +6,16 @@ form:
   fields:
     fullname:
       type: text
+	  labelclasses: text-label
+      classes: text-style
       validate:
         required: true
 
 
     username:
       type: text
+      labelclasses: text-label
+      classes: text-style
       validate:
         required: true
         message: PLUGIN_LOGIN.USERNAME_NOT_VALID
@@ -19,6 +23,8 @@ form:
 
     email:
       type: email
+      labelclasses: text-label
+      classes: text-style
       validate:
         required: true
         message: PLUGIN_LOGIN.EMAIL_VALIDATION_MESSAGE
@@ -26,6 +32,8 @@ form:
     password1:
       type: password
       label: Enter a password
+      labelclasses: text-label
+      classes: text-style
       validate:
         required: true
         message: PLUGIN_LOGIN.PASSWORD_VALIDATION_MESSAGE
@@ -33,6 +41,8 @@ form:
 
     password2:
       type: password
+      labelclasses: text-label
+      classes: text-style
       label: Enter the password again
       validate:
         required: true
@@ -43,6 +53,7 @@ form:
       -
           type: submit
           value: Submit
+          classes: vspace primary
 
   process:
       register_user: true

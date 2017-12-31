@@ -10,7 +10,7 @@
             {% endif %}
         {% endfor %}
         <div class="form-actions secondary-accent">
-            <button type="submit" class="button primary" name="task" value="login.forgot"><i class="fa fa-paper-plane"></i> {{ "PLUGIN_LOGIN.BTN_SEND_INSTRUCTIONS"|t }}</button>
+            <button type="submit" class="button primary" name="task" value="login.forgot"><i class="fa fa-paper-plane"></i> Send email</button>
         </div>
 
         {{ nonce_field('forgot-form', 'forgot-form-nonce')|raw }}

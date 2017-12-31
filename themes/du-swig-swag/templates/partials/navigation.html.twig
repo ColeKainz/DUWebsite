@@ -28,8 +28,7 @@
         {{ _self.loop(pages) }}
     {% else %}
         {% for page in pages.children.visible %}
-            {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-				
+            {% set current_page = page.active or page.activeChild or page.header.redirect is not null and grav.uri.path is same as ('/' ~ page.header.redirect) ? 'selected' : '' %}
 				{% set perm = [] %}
 				{% for key, val in page.header.access %}
 					{% set perm = perm|merge([key]) %}

@@ -10,6 +10,8 @@ form:
           type: email
           label: PLUGIN_LOGIN.EMAIL
           autofocus: true
+          labelclasses: text-label
+          classes: text-style
           validate:
             required: true
             type: email

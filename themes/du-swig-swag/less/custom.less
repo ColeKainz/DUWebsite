@@ -12,14 +12,6 @@
 
 @textCol:		#000000;
 
-@textCrush:		1386;
-
-@gradientAlpha:	min(.25, 1 - @screenWidth/@textCrush);
-
-@direction:		50% 50%;
-@origin:		#ffffff;
-@end:			#000000;
-
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -38,16 +30,6 @@
 html {
 	overflow-y: scroll;
 	overflow-x: hidden;
-	
-	@media (min-width: 1386px){
-		/*this does gradient don't touch*/
-		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+25,000000+75,000000+100&0.25+0,0+25,0+75,0.25+100 */
-		background: -moz-linear-gradient(left, rgba(0,0,0,@gradientAlpha) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,@gradientAlpha) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(left, rgba(0,0,0,@gradientAlpha) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,0) 75%,rgba(0,0,0,@gradientAlpha) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to right, rgba(0,0,0,@gradientAlpha) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,0) 75%,rgba(0,0,0,@gradientAlpha) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40000000', endColorstr='#40000000',GradientType=1 ); /* IE6-9 */
-	}
-	
 }
 
 body {
@@ -347,4 +329,7 @@ body {
 	margin-left: 5px;
 	
 	margin-top: 5px;
+	
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
 }

@@ -14,6 +14,8 @@ form:
           id: username
           placeholder: Username
           label: PLUGIN_LOGIN.USERNAME_EMAIL
+          labelclasses: text-label
+          classes: text-style
           autofocus: true
 
         - name: password
@@ -21,5 +23,7 @@ form:
           id: password
           placeholder: Password
           label: PLUGIN_LOGIN.PASSWORD
+          labelclasses: text-label
+          classes: text-style
 ---
 
