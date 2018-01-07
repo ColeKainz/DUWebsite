@@ -158,7 +158,7 @@
 				
 				{% if globals.signin.enabled %}
 					{% if grav.user.username %}
-						<a class="link-button" href="{{ uri.addNonce((base_url_relative ~ uri.path)|trim('/') ~ '/task' ~ config.system.param_sep ~ 'login.logout', 'logout-form', 'logout-nonce')|e }}">
+						<a class="link-button" href="{{ uri.addNonce((base_url_relative ~ uri.path is not same as ('/') ?: '/home')|trim('/') ~ '/task' ~ config.system.param_sep ~ 'login.logout', 'logout-form', 'logout-nonce')|e }}">
 							<img src="{{ (globals.signin.signout_icon | first).path }}" class="link-icon"/>
 						</a>
 					{% else %}
