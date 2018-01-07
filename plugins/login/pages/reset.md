@@ -17,6 +17,8 @@ form:
           id: password
           placeholder: Password
           autofocus: true
+          labelclasses: text-label
+          classes: text-style
           validate:
             required: true
             message: PLUGIN_LOGIN.PASSWORD_VALIDATION_MESSAGE

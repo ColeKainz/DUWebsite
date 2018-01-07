@@ -27,6 +27,8 @@
       {% block form_classes %}
       class="{{ form_outer_classes }} {{ form.classes }}"
       {% endblock %}
+      {% if form.novalidate %}novalidate{% endif %}
+	  enctype=multipart/form-data
 >
 
   {% block inner_markup_fields_start %}{% endblock %}

@@ -1,0 +1,9 @@
+email: test@test.test
+fullname: Test
+state: enabled
+access:
+  site:
+    login: 'true'
+    test: 'false'
+hashed_password: $2y$10$i65bb7bJe6PEVg3JfjQoIOEygMWyiwqUUlCZHR.p5ihaY96wZPoMq
+activation_token: 'ad992e27d3d940bc2b5ef9894ce9eae3::1514566688'

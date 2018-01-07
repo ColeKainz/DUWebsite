@@ -3,8 +3,10 @@ param_sep: ':'
 wrapped_site: false
 reverse_proxy_setup: false
 force_ssl: false
+force_lowercase_urls: true
 username_regex: '^[a-z0-9_-]{3,16}$'
 pwd_regex: '(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
+intl_enabled: true
 languages:
   include_default_lang: true
   translations: true
@@ -106,7 +108,7 @@ errors:
   display: '1'
   log: true
 debugger:
-  enabled: false
+  enabled: true
   shutdown:
     close_connection: true
   twig: true
@@ -118,8 +120,8 @@ images:
   auto_fix_orientation: false
 media:
   enable_media_timestamp: false
-  upload_limit: 0
   auto_metadata_exif: false
+  upload_limit: 2097152
 session:
   enabled: true
   timeout: 1800

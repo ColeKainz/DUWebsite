@@ -14,7 +14,6 @@
 html {
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: #ffffff;
 }
 body {
   /*background-image: url("../images/background.jpg");*/
@@ -23,18 +22,17 @@ body {
   font-size: 1.1rem;
   font-family: "zing";
 }
-@media (max-width: 700px) {
+@media (max-width: 699px) {
   .main-nav {
     width: 200px;
     height: 100%;
     float: left;
     background-color: #ffffff;
     position: fixed;
-    overflow: hidden;
+    overflow: auto;
     left: -380px;
-    display: flex;
-    flex-direction: row;
     margin-right: 10px;
+    padding-bottom: 30px;
     -moz-box-shadow: 0 0 8px 0 black;
     -webkit-box-shadow: 0 0 8px 0 black;
     box-shadow: 0 0 8px 0 black;
@@ -42,12 +40,20 @@ body {
 }
 @media (min-width: 700px) {
   .main-nav {
-    width: 200px;
+    width: 210px;
     float: left;
-    margin-right: 10px;
-    border-style: solid;
-    border-width: 0 2px 0 0;
-    border-color: #4169e1;
+    margin-top: 15px;
+  }
+}
+.main-nav::-webkit-scrollbar {
+  display: none;
+}
+.vertical-expand {
+  /*Adds padding so the last element of the mobile nav is in view when the nav is scrollable*/
+}
+@media (max-width: 700px) {
+  .vertical-expand {
+    margin-bottom: 50px;
   }
 }
 @media (max-width: 700px) {
@@ -102,6 +108,12 @@ body {
     padding-left: 230px;
   }
 }
+@media (min-width: 1160px) {
+  .header {
+    padding-left: 230px;
+    width: 1150px;
+  }
+}
 @media (min-width: 1386px) {
   .header {
     width: 940px;
@@ -128,8 +140,13 @@ body {
     position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     text-align: left;
+  }
+}
+@media (min-width: 1386px) {
+  .header-container {
+    align-items: center;
   }
 }
 .body {
@@ -138,7 +155,6 @@ body {
   text-align: left;
   overflow: hidden;
   padding: 10px;
-  padding-left: 20px;
   background-color: transparent;
 }
 @media (min-width: 1160px) and (max-width: 1386px) {
@@ -168,14 +184,53 @@ body {
     padding-left: 10px;
   }
 }
-.logo a {
-  padding-top: 100px;
+@media (max-width: 350px) {
+  .logo {
+    padding-left: 40px;
+  }
 }
 .du-logo {
   height: 32px;
   width: 32px;
   margin-top: 5px;
   background-color: #ffffff;
+}
+@media (max-width: 390px) {
+  .du-logo {
+    display: none;
+  }
+}
+.media-links {
+  float: right;
+  padding-right: 10px;
+  padding-top: 8px;
+  list-style-type: none;
+}
+@media (max-width: 700px) {
+  .media-links {
+    display: none;
+  }
+}
+@media (min-width: 700px) {
+  .media-nav-links {
+    display: none;
+  }
+}
+.link-button {
+  padding-right: 5px;
+  text-decoration: none;
+}
+.link-icon {
+  height: 24px;
+  width: 24px;
+}
+.nav-icon {
+  display: inline;
+  height: 16px;
+  width: 16px;
+  float: left;
+  margin-left: 10px;
+  margin-top: 4px;
 }
 .blue a:link,
 .blue a:visited {
@@ -185,32 +240,37 @@ body {
 .main-nav ul {
   width: 100%;
   margin-top: 0px;
+  margin-bottom: 0px;
   padding-left: 0px;
   list-style-type: none;
   background-color: transparent;
 }
 .main-nav ul li {
+  display: inline-block;
   letter-spacing: normal;
   text-align: right;
   padding-right: 7px;
-  padding-top: 5px;
-  height: 30px;
+  padding-top: 2px;
   width: 100%;
-  border-top: 1px solid #f0f0f0;
 }
-.main-nav a:hover,
-.main-nav a:visited {
-  background-color: transparent;
-  color: #4169e1;
+.main-nav a:hover {
+  background-color: #a1c9f1;
+  color: #ffffff;
+  border-radius: 5px;
 }
 .main-nav a .selected {
-  background-color: transparent;
-  color: #4169e1;
-  font-weight: bold;
+  background-color: #4169e1;
+  color: #ffffff;
+  border-radius: 5px;
 }
 .main-nav ul a {
   display: block;
-  height: 30px;
   color: #4169e1;
   text-decoration: none;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
 }

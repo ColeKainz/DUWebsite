@@ -3,6 +3,8 @@
 @mainNavBack:	#ffffff;
 @mainBack:		transparent;
 
+@screenWidth:	1386;
+
 @headerBack:	#4169e1;
 @headerCol:		#ffffff;
 
@@ -28,8 +30,6 @@
 html {
 	overflow-y: scroll;
 	overflow-x: hidden;
-	
-	background-color: #ffffff;
 }
 
 body {
@@ -40,7 +40,7 @@ body {
 	font-size: 1.1rem;
 	font-family: "zing";
 	
-	@media (max-width: 700px) {
+	@media (max-width: 699px) {
 		width: 200px;
 		height: 100%;
 		float: left;
@@ -48,14 +48,12 @@ body {
 		background-color: @mainNavBack;
 			
 		position: fixed;
-		overflow: hidden;
+		overflow: auto;
 			
 		left: -380px;
 			
-		display: flex;
-		flex-direction: row;
-			
 		margin-right: 10px;
+		padding-bottom: 30px;
 		
 		-moz-box-shadow: 0 0 8px 0 black;
 		-webkit-box-shadow: 0 0 8px 0 black;
@@ -63,14 +61,21 @@ body {
 	}
 	
 	@media (min-width: 700px) {
-		width: 200px;
+		width: 210px;
 		float: left;
 		
-		margin-right: 10px;
-		
-		border-style: solid;
-		border-width: 0 2px 0 0;
-		border-color: @headerBack;
+		margin-top: 15px;
+	}
+}
+
+.main-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.vertical-expand {
+	/*Adds padding so the last element of the mobile nav is in view when the nav is scrollable*/
+	@media (max-width: 700px) {
+		margin-bottom: 50px;
 	}
 }
 
@@ -125,11 +130,16 @@ body {
 	@media (min-width: 700px) {
 		padding-left: 230px;
 	}
-
+	
+	@media (min-width: 1160px) {
+		padding-left: 230px;
+		width: 1150px;
+	}
+	
 	@media (min-width: 1386px) {
 		width: 940px;
 		padding-left: 20px;
-	}	
+	}
 }
 
 .header-container {
@@ -159,9 +169,13 @@ body {
 		
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: left;
 		
 		text-align: left;
+	}
+	
+	@media (min-width: 1386px) {
+		align-items: center;
 	}
 }
 
@@ -172,7 +186,6 @@ body {
 		
 	overflow: hidden;
 	padding: 10px;
-	padding-left: 20px;
 		
 	background-color: @bodyBack;
 	
@@ -201,10 +214,9 @@ body {
 	@media (max-width: 700px) {
 		padding-left: 10px;
 	}
-}
-
-.logo a {
-		padding-top: 100px;
+	@media (max-width: 350px) {
+		padding-left: 40px;
+	}
 }
 
 .du-logo {
@@ -214,6 +226,50 @@ body {
 	margin-top: 5px;
 	
 	background-color: @headerCol;
+	
+	@media (max-width: 390px) {
+		display: none;
+	}
+}
+
+.media-links {
+	float: right;
+	
+	padding-right: 10px;
+	padding-top: 8px;
+	
+	list-style-type: none;
+	
+	@media (max-width: 700px) {
+			display: none;
+	}
+}
+
+.media-nav-links {
+	@media (min-width: 700px) {
+			display: none;
+	}
+}
+
+.link-button {
+	padding-right: 5px;
+	text-decoration: none;
+}
+
+.link-icon {
+	height: 24px;
+	width: 24px;
+}
+
+.nav-icon {
+	display: inline;
+
+	height: 16px;
+	width: 16px;
+		
+	float: left;
+	margin-left: 10px;
+	margin-top: 4px;
 }
 
 .blue a:link, .blue a:visited {
@@ -221,13 +277,16 @@ body {
 }
 
 /* Menu Settings */
-@navItemSelected: 	transparent;
+@navItemSelected: 	#4169e1;
+@navItemHover:		#a1c9f1;
 @navItemFont:		#4169e1;
 @navItemSep:		#f0f0f0;
+
 .main-nav ul {
 	width: 100%;
 	
 	margin-top: 0px;
+	margin-bottom: 0px;
 	padding-left: 0px;
 	
 	list-style-type: none;
@@ -235,34 +294,42 @@ body {
 }
 
 .main-nav ul li {
+	display: inline-block;
+
     letter-spacing: normal;
 	text-align: right;
 	
 	padding-right: 7px;
-	padding-top: 5px;
+	padding-top: 2px;
 		
-	height: 30px;
 	width: 100%;
-		
-	border-top: 1px solid @navItemSep;
 }
 
-.main-nav a:hover,  .main-nav a:visited{
-    background-color: @navItemSelected;
-	color: @navItemFont;
+.main-nav a:hover {
+    background-color: @navItemHover;
+	color: @headerCol;
+	
+	border-radius: 5px;
 }
 
 .main-nav a .selected{
     background-color: @navItemSelected;
-	color: @navItemFont;
-	font-weight: bold;
+	color: @headerCol;
+	
+	border-radius: 5px;
 }
 
 .main-nav ul a {
-	display:block;
+	display: block;
 	
-	height: 30px;
-
     color: @navItemFont;
 	text-decoration: none;
+	
+	margin-right: 5px;
+	margin-left: 5px;
+	
+	margin-top: 5px;
+	
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
 }

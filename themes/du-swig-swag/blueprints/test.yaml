@@ -1,0 +1,34 @@
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+            header.events:
+              name: events
+              type: list
+              style: vertical
+              label: Events
+
+              fields:
+                .title:
+                  type: text
+                  label: Title
+                  
+                .description:
+                  type: text
+                  label: Description
+                  
+                .pic:
+                  type: file
+                  label: Photograph
+                  multiple: false
+                  destination: 'self@'
+                  accept:
+                    - image/*

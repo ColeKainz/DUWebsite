@@ -1,15 +1,88 @@
+
+.primary {
+	vertical-align: middle;
+	border-radius: 10px;
+	border: none;
+	margin-top: 5px;
+	
+	background-color: #ffffff;
+	color: #4169e1;
+	
+	width: 100%;
+	
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+	text-decoration:none;
+}
+
+.primary:hover {
+	background-color: #a1c9f1;
+	color: #ffffff;
+}
+
+.primary:hover > a {
+	color: #ffffff;
+}
+
+.primary:active {
+	background-color: #4169e1;
+}
+
+.secondary{
+	width: 100%;
+	color: #ffffff;
+}
+
+.login-status {
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.vspace{
+	margin-top: 10px !important;
+}
+
+.text-style {
+	width: 200px;
+	height: 25px;
+	
+	border-radius: 20px;
+	
+	border: none;
+	color: #000000;
+	
+	padding: 0px 10px 0px 10px;
+}
+
+.select-style {
+	width: 200px;
+	height: 25px;
+	
+	border-radius: 15px 15px 0px 0px;
+	
+	border: none;
+	color: #000000;
+	
+	padding: 0px 10px 0px 10px;
+}
+
 #grav-login {
-    max-width: 30rem;
-    margin: 5rem auto;
-    background: #fcfcfc;
-    border: 4px solid #eee;
-    border-radius: 4px;
+    background: #4169e1;
+	color: #ffffff;
+	
+    border-radius: 5px;
     padding: 1rem 3rem 3rem 3rem;
     text-align: center;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	margin-top: 10px;
 }
 
 #grav-login .form-actions {
-    text-align: right;
+	width: 200px;
 }
 
 #grav-logout {
@@ -23,7 +96,7 @@
 }
 
 .alert.error {
-    color: #e74c3c;
+    color: #bf3ce7;
 }
 
 #grav-login p {
@@ -34,10 +107,6 @@
 }
 #grav-login .form-actions p {
     margin-bottom: 0;
-}
-
-#grav-login .button {
-    vertical-align: middle;
 }
 
 #grav-login .delimiter {
@@ -68,14 +137,75 @@
     right: 0;
 }
 
-#grav-login .rememberme {
-    display: inline-block;
-    float: left;
-    padding: 7px 0;
-    vertical-align: middle;
+/*Avatar*/
+.avatarDis{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
-#grav-login .rememberme label {
-    font-weight: inherit;
-    display: inline;
+.avatarData {
+	width: 100%;	
+}
+
+.avatarDis > .image {
+	display: flex;
+	flex-direction: column;
+}
+
+.avatarDis > .dropzone {
+	height: 325px;
+	flex: 1;
+}
+
+/*User-profile*/
+#user-profile {
+	background-color: #4169e1;
+	color: #ffffff;
+	
+    border-radius: 5px;
+	padding: 10px;
+}
+
+#user-profile > .public {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+#user-profile > .public > .form-field{
+	margin: 0px 5px 0px 5px;
+}
+
+#user-profile > .private {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+#user-profile > .private > .form-field {
+	margin: 0px 5px 0px 5px;
+}
+
+#user-profile > .buttonSpace {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	
+	width: 100%;
+}
+
+#user-profile > .buttonSpace > .button {
+	width: 200px;
+}
+
+#user-profile > .bio > .form-data > .form-textarea-wrapper > .bioarea {
+	width: 100%;
+	height: 100px;
+	color: #000000;
+	
+	resize: none;
 }

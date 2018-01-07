@@ -1,0 +1,59 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	{{ page.content }}
+
+	<div id="container">
+		<table border='1' width='100%' id="eventsTable">
+
+		</table>
+	</div>
+
+
+	<script type="text/javascript">
+		var events = [
+		{% for events in page.header.events %}
+		{
+			title: "{{ events.title }}",
+			
+			date: "{{ events.date }}",
+			
+			description: "{{ events.description }}",
+			
+			{% set twigPic = (events.pic |first).name %}
+			pic: "{{ page.media[twigPic].cropZoom(200, 100).url }}",
+		},
+		
+		{% endfor %}
+		];
+		
+		function displayTable() {	
+			var table = $('#eventsTable')[0];
+			var rowCount = 0;
+					
+			//Refresh table.
+			table.innerHTML = "";
+			
+			for(i=0; i<events.length; i++){				
+					var row = table.insertRow(rowCount);
+					rowCount++;
+					
+					var picCell = row.insertCell(0);
+					picCell.className = "eventsPicture";
+					picCell.innerHTML =	'<img src="' + events[i].pic + '"/>';
+					
+					var conCell = row.insertCell(1);
+					conCell.className = "eventsContent";
+					conCell.innerHTML = '<div class="contentHeader">' +
+											'<div>' + events[i].title + '</div>' + 
+											'<div>' + events[i].date + '</div>' + 
+										'</div>' +
+										'<div class="contentDesc">' + events[i].description + '</div>';
+				
+			}
+		}
+		
+		$(document).ready(displayTable);
+		$(window).resize(displayTable);
+	</script>
+{% endblock %}

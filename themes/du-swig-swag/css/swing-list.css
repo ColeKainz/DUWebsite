@@ -1,0 +1,44 @@
+.promBlue {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	
+	background-color: #4169e1;
+	color: #ffffff;
+	
+	border-radius: 5px;	
+	margin-bottom: 10px;
+}
+
+.promWhite {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	
+	border-radius: 5px;	
+	margin-bottom: 10px;
+}
+
+.text {
+	display: flex;
+	justify-content: center;
+
+	padding: 10px 10px 10px 10px;
+	text-align: center;
+	align-items: center;
+	
+	height: 200px;
+}
+
+.pic {
+	display: block;
+	min-width: 200px;
+	
+	margin: 0px 10px 0px 10px;
+}
+
+@media (max-width: 500px) {
+	.pic {
+		display: none;
+	}
+}
