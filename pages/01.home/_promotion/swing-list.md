@@ -1,37 +1,37 @@
 ---
 list:
     -
-        text: 'YOU KNOW THEY SAY ALL MEN ARE CREATED EQUAL, BUT YOU LOOK AT ME AND YOU LOOK AT SOMOA JOE AND YOU CAN SEE THAT STATEMENT IS NOT TRUE! SEE NORMALLY IF YOU GO 1 ON 1 WITH ANOTHER WRESTLER YOU GOT A 50/50 CHANCE OF WINNING. BUT I''M A GENETIC FREAK, AND I''M NOT NORMAL!'
+        text: "Princess Twilight Sparkle is a super smart pony\r\nand a natural born leader. She is good at helping\r\nher pony friends use their skills and talents to get \r\nthe job done, while discovering new things about\r\nherself and all her amazing friends!"
         picture:
-            user/pages/01.home/_promotion/elmo.jpeg:
-                name: elmo.jpeg
-                type: image/jpeg
-                size: 45514
-                path: user/pages/01.home/_promotion/elmo.jpeg
+            user/pages/01.home/_promotion/twilight_sparkle.png:
+                name: twilight_sparkle.png
+                type: image/png
+                size: 22763
+                path: user/pages/01.home/_promotion/twilight_sparkle.png
     -
-        text: 'SO YOU GOT A 25% AT BEST AT BEAT ME! AND THEN YOU ADD KURT ANGLE TO THE MIX - YOU THE CHANCES OF WINNING DRASTIC GO DOWN. SEE THE THREE-WAY AT SACRIFICE YOU GOT A 33 AND A 3rd CHANCE OF WINNING. BUT I! I GOT A 66 AND 2/3 CHANCE OF WINNING ''CAUSE KURT ANGLE KNOOOWS HE CAN''T BEAT ME, AND HE''S NOT EVEN GONNA TRY!'
+        text: "Fluttershy is a kind and gentle pony with everyone.\r\nShe likes to help her pony friends solve their problems.\r\nShe takes good care of the animals in Ponyville by feeding\r\nthem and giving them a good home."
         picture:
-            user/pages/01.home/_promotion/douch.jpg:
-                name: douch.jpg
-                type: image/jpeg
-                size: 43022
-                path: user/pages/01.home/_promotion/douch.jpg
+            user/pages/01.home/_promotion/Fluttyershy.png:
+                name: Fluttyershy.png
+                type: image/png
+                size: 18483
+                path: user/pages/01.home/_promotion/Fluttyershy.png
     -
-        text: 'SO SOMOA JOE, YOU TAKE YOUR 33 AND A THIRD CHANCE, MINUS MY TWENTY FIVE PERCENT CHANCE, AND YOU''VE GOT AN EIGHT AND A THIRD CHANCE OF WINNING AT SACRIFICE. BUT THEN YOU TAKE MY 75 CHANCE OF WINNING (IF WE WAS TO GO 1 ON 1) AND THEN ADD 66 S PERCENTS'
+        text: "Applejack is honest, friendly and sweet to the core! \r\nShe is always ready to lend a hoof to help her pony\r\n friends. She lives and works at Sweet Apple Acres \r\nand she makes sure to take good care of the environment."
         picture:
-            user/pages/01.home/_promotion/strong.jpg:
-                name: strong.jpg
-                type: image/jpeg
-                size: 26129
-                path: user/pages/01.home/_promotion/strong.jpg
+            user/pages/01.home/_promotion/Applejack.png:
+                name: Applejack.png
+                type: image/png
+                size: 17703
+                path: user/pages/01.home/_promotion/Applejack.png
     -
-        text: 'I GOT A 141 AND TWO THIRDS CHANCE OF WINNING AT SACRIFICE! SENIOR JOE; THE NUMBERS DON''T LIE, AND THEY SPELL DISASTER FOR YOU, AT SACRIFICE!'
+        text: "Rainbow Dash is always ready for an adventure with \r\nher MY LITTLE PONY friends. Rain or shine, she is a \r\nloyal dependable friend who will never let you down!"
         picture:
-            user/pages/01.home/_promotion/cookie.jpg:
-                name: cookie.jpg
-                type: image/jpeg
-                size: 49045
-                path: user/pages/01.home/_promotion/cookie.jpg
+            user/pages/01.home/_promotion/Rainbowdash.png:
+                name: Rainbowdash.png
+                type: image/png
+                size: 14775
+                path: user/pages/01.home/_promotion/Rainbowdash.png
 title: promotion
 ---
 
