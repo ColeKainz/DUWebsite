@@ -31,7 +31,7 @@ form:
 
                 header.president.picture:
                   type: file
-                  label: Photograph
+                  label: President photograph (280x325)
                   multiple: false
                   destination: 'self@'
                   accept:
@@ -63,7 +63,7 @@ form:
 
                 .picture:
                   type: file
-                  label: Photograph
+                  label: Member photograph (280x325)
                   multiple: false
                   destination: 'self@'
                   accept:
