@@ -12,6 +12,37 @@ form:
           title: Content
 
           fields:
+            president:
+              name: president
+              type: section
+              title: President
+
+              fields:
+                header.president.name:
+                  type: text
+                  label: Name
+
+                header.president.position:
+                  type: selectize
+                  label: Position(s)
+                  multiple: true
+                  validate:
+                    type: commalist
+
+                header.president.picture:
+                  type: file
+                  label: Photograph
+                  multiple: false
+                  destination: 'self@'
+                  accept:
+                    - image/*
+                    
+                header.president.bio:
+                  type: editor
+                  label: Bio
+                  validate:
+                    type: textarea
+                    
             header.members:
               name: members
               type: list

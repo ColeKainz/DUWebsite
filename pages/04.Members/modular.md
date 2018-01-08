@@ -3,7 +3,7 @@ title: Members
 content:
     items: '@self.modular'
     order:
-        by: default
+        by: date
         dir: desc
 body_classes: modular
 ---

@@ -1,42 +1,48 @@
+#container {
+	display: flex;
+	justify-content: center;
+}
+
 #membersTable {
 	border-collapse: collapse;
 	border-style: none;
+	table-layout: fixed;
 }
 
 #membersTable td {
 	border-style: none;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding: 10px;
+}
+
+.memberDis {
+
+}
+
+.memberImgCenter {
+	width: 100%;
+}
+
+.memberImgCenter > img {
+	display: block;
 }
 
 .memberName {
-	margin: -5px;
+	font-weight: bold;
+	margin: 0px;
 }
 
-.memberPos {
-	font-weight: bold;
-	margin: -5px;
-	margin-bottom: 2px;
+.memberPos {	
+	margin: 0px;
+}
+
+.presBio {
+	overflow: hidden;
 }
 
 .presDis {
 	display: flex;
-	justify-content: center;
-	flex-direction: row;
-}
-
-.presInfo {
-	display: flex;
 	justify-content: flex-start;
 	flex-direction: column;
-}
-
-.presTitle {
-	font-weight: bold;
-	font-size: 3em;
-	margin-top: -20px;
-	margin-left: 10px;
-	margin-bottom: -30px;
 }
 
 .presPos {
@@ -46,8 +52,11 @@
 	margin-bottom: -20px;
 }
 
+
 .presName {
-	text-align: left;
-	padding-left: 10px;
-	margin-bottom: -20px;
+	font-weight: bold;
+	font-size: 3em;
+	margin-top: -20px;
+	margin-left: 10px;
+	margin-bottom: -30px;
 }

@@ -1,45 +1,56 @@
 ---
+president:
+    name: Cookie
+    position:
+        - president
+    bio: dsfsdfdsfsdfdsf
+    picture:
+        user/pages/04.members/_members/cookie.jpg:
+            name: cookie.jpg
+            type: image/jpeg
+            size: 49045
+            path: user/pages/04.members/_members/cookie.jpg
 members:
     -
-        name: Mr.FUCKINGLAZYPOS
+        name: Moo
         position:
-            - 'VP DoesNothing'
-            - 'VP SitOnAss'
+            - mooooooooo
         picture:
-            user/pages/04.test3/_members/what.png:
-                name: what.png
-                type: image/png
-                size: 189383
-                path: user/pages/04.test3/_members/what.png
-    -
-        name: 'Sexy SonaBitch'
-        position:
-            - 'VP Smexy'
-        picture:
-            user/pages/04.test3/_members/Sexy.jpg:
-                name: Sexy.jpg
+            user/pages/04.members/_members/elmo.jpeg:
+                name: elmo.jpeg
                 type: image/jpeg
-                size: 46187
-                path: user/pages/04.test3/_members/Sexy.jpg
+                size: 45514
+                path: user/pages/04.members/_members/elmo.jpeg
     -
-        name: Sir.Swaggen
+        name: 'Yes'
         position:
-            - President
+            - mhm
         picture:
-            user/pages/04.test3/_members/mfw.jpg:
-                name: mfw.jpg
+            user/pages/04.members/_members/csm_Cooley_Dennis__002__e6a2c94e98.jpg:
+                name: csm_Cooley_Dennis__002__e6a2c94e98.jpg
                 type: image/jpeg
-                size: 59256
-                path: user/pages/04.test3/_members/mfw.jpg
+                size: 19535
+                path: user/pages/04.members/_members/csm_Cooley_Dennis__002__e6a2c94e98.jpg
     -
-        name: Cow
+        name: dwfwdf
         position:
-            - 'Goddam Cow'
+            - wfwfw
         picture:
-            user/pages/04.test3/_members/cow.jpg:
-                name: cow.jpg
+            user/pages/04.members/_members/cookie.jpg:
+                name: cookie.jpg
                 type: image/jpeg
-                size: 12766
-                path: user/pages/04.test3/_members/cow.jpg
+                size: 49045
+                path: user/pages/04.members/_members/cookie.jpg
+    -
+        name: ghy
+        position:
+            - ijij
+        picture:
+            user/pages/04.members/_members/banner.jpg:
+                name: banner.jpg
+                type: image/jpeg
+                size: 80430
+                path: user/pages/04.members/_members/banner.jpg
+title: members
 ---
 
