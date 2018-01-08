@@ -10,9 +10,20 @@
 </div>
 
 <script type="text/javascript">
-	var promo = "{{ header.president.bio }}";
-	
-	{{ dump(grav.user.find('')) }}
+	var president = {
+		name: "{{ header.president.name }}",
+		
+		position: [
+		{% for pos in header.president.position %}
+			"{{ pos }}",
+		{% endfor %}
+		],
+		
+		{% set twigPic = (header.president.picture |first).name %}
+		
+		pic: "{{ page.media[twigPic].cropZoom(280, 325).url }}",
+		bio: "{{ header.president.bio }}",
+	}
 	
 	var members = [
 	{% for member in page.header.members %}
@@ -49,6 +60,9 @@
 		var cell = row.insertCell(0);
 		cell.align = "center";
 		cell.className = "memberPresident";
+				
+		console.log(col);
+
 		
 		switch (col){
 			case 1:
