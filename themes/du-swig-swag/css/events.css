@@ -23,13 +23,13 @@
 }
 
 .eventContent{
-	background-color: #4169e1;
+	background-color: #a1c9f1;
 	color: #ffffff;
 	
 	display: flex;
 	flex-direction: column;
 		
-	padding: 0px 10px 0px 10px;
+	padding: 10px;
 	margin-right: 20px;
 	width: 100%;
 }
