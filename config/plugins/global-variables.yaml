@@ -50,7 +50,7 @@ house:
       size: 2238
       path: user/themes/du-swig-swag/images/icons/location-mobile.png
 signin:
-  enabled: true
+  enabled: false
   icon:
     user/themes/du-swig-swag/images/icons/signin.png:
       name: signin.png

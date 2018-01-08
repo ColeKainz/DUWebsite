@@ -1,9 +1,0 @@
-email: cow_cow@cow.cow
-fullname: Tom
-state: enabled
-access:
-  site:
-    login: 'true'
-    test: 'false'
-hashed_password: $2y$10$ACoPJB2hmooYOrQlq/V/FegSehx/TRALUArdtayLQKLqiB88lbu7S
-activation_token: 'cb34af604a728eda4977230380cfa5b2::1514264262'
