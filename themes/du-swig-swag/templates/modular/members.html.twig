@@ -10,20 +10,9 @@
 </div>
 
 <script type="text/javascript">
-	var president = {
-		name: "{{ header.president.name }}",
-		
-		position: [
-		{% for pos in header.president.position %}
-			"{{ pos }}",
-		{% endfor %}
-		],
-		
-		{% set twigPic = (header.president.picture |first).name %}
-		
-		pic: "{{ page.media[twigPic].cropZoom(200, 325).url }}",
-		bio: "{{ header.president.bio }}",
-	}
+	var promo = "{{ header.president.bio }}";
+	
+	{{ dump(grav.user.find('')) }}
 	
 	var members = [
 	{% for member in page.header.members %}
@@ -37,13 +26,13 @@
 		],
 		
 		{% set twigPic = (member.picture |first).name %}
-		pic: "{{ page.media[twigPic].cropZoom(200, 325).url }}",
+		pic: "{{ page.media[twigPic].cropZoom(280, 325).url }}",
 	},
 	
 	{% endfor %}
 	];
 	
-	var memDisplayWidth = 250;
+	var memDisplayWidth = 280;
 	
 	function displayTable() {	
 		col = parseInt(parseInt($('#container').width()) / memDisplayWidth);
@@ -60,15 +49,14 @@
 		var cell = row.insertCell(0);
 		cell.align = "center";
 		cell.className = "memberPresident";
-				
-		console.log(col);
-
 		
 		switch (col){
 			case 1:
 				cell.innerHTML =	'<div class="memberDis">'
-								+		'<img class="memberImg" src="' + president.pic + '"/>'
-								+		'<p class="memberName">' + president.name + '</p>'							
+								+		'<div class="memberImgCenter">'
+								+			'<img src="' + president.pic + '"/>'	
+								+		'</div>'
+								+		'<p class="memberName">' + president.name + '</p>'
 								+		'<p class="memberPos">' + positionToList(president.position) + '</p>'
 								+	'</div>';
 				break;
@@ -78,8 +66,10 @@
 				cell2.align = "center";
 				
 				cell.innerHTML = 	'<div class="memberDis">'
-								+		'<img class="memberImg" src="' + president.pic + '"/>'
-								+		'<p class="memberName">' + president.name + '</p>'							
+								+		'<div class="memberImgCenter">'
+								+			'<img src="' + president.pic + '"/>'	
+								+		'</div>'
+								+		'<p class="memberName">' + president.name + '</p>'	
 								+		'<p class="memberPos">' + positionToList(president.position) + '</p>'
 								+	'</div>';
 				cell2.innerHTML =	'<div class="presBio">'
@@ -95,8 +85,10 @@
 				cell3.align = "center";
 				
 				cell.innerHTML = 	'<div class="memberDis">'
-								+		'<img class="memberImg" src="' + president.pic + '"/>'
-								+		'<p class="memberName">' + president.name + '</p>'							
+								+		'<div class="memberImgCenter">'
+								+			'<img src="' + president.pic + '"/>'	
+								+		'</div>'
+								+		'<p class="memberName">' + president.name + '</p>'	
 								+		'<p class="memberPos">' + positionToList(president.position) + '</p>'
 								+	'</div>';
 				
@@ -106,7 +98,7 @@
 				$('#bioCell').text(president.bio);
 				$('#bioCell').attr('alt', president.bio);
 							
-				cell3.innerHTML =	'<div class="memberDis">'
+				cell3.innerHTML =	'<div>'
 								+			'<img src="{{url("theme://images/DU-Crest.png")}}" width="200" height="235"/>'
 								+	'</div>';
 				break;
@@ -127,8 +119,10 @@
 			cell.align = "center";
 			cell.className = "member";
 			cell.innerHTML =	'<div class="memberDis">'
-							+		'<img class="memberImg" src="' + members[i].pic + '"/>'
-							+		'<p class="memberName">' + members[i].name + '</p>'
+							+		'<div class="memberImgCenter">'
+							+			'<img src="' + members[i].pic + '"/>'	
+							+		'</div>'
+							+		'<p class="memberName">' + members[i].name + '</p>'	
 							+		'<p class="memberPos">' + positionToList(members[i].position) + '</p>'
 							+	'</div>';
 							

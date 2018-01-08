@@ -1,33 +1,42 @@
+#container {
+	display: flex;
+	justify-content: center;
+}
+
 #membersTable {
 	border-collapse: collapse;
 	border-style: none;
 	table-layout: fixed;
-	
-	margin-left: -50px;
 }
 
 #membersTable td {
 	border-style: none;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding: 10px;
 }
 
-.memberImg {
-	border: black 2px solid;
+.memberDis {
+
+}
+
+.memberImgCenter {
+	width: 100%;
+}
+
+.memberImgCenter > img {
+	display: block;
 }
 
 .memberName {
 	font-weight: bold;
-	margin: -5px;
+	margin: 0px;
 }
 
-.memberPos {
-	margin: -5px;
-	margin-bottom: 2px;
+.memberPos {	
+	margin: 0px;
 }
 
 .presBio {
-		overflow: hidden;
+	overflow: hidden;
 }
 
 .presDis {
