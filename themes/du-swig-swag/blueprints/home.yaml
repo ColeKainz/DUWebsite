@@ -16,7 +16,7 @@ form:
           fields:
             header.pic:
               type: file
-              label: Photograph
+              label: Banner (910x225)
               multiple: false
               destination: 'self@'
               accept:

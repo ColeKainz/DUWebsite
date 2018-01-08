@@ -36,7 +36,7 @@ form:
                   
                 .pic:
                   type: file
-                  label: Photograph
+                  label: Display picture (200x125)
                   multiple: false
                   destination: 'self@'
                   accept:
