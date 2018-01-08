@@ -4,10 +4,8 @@
 {{ assets.css() }}
 
 
-<div id="container">
-	<table border='1' width='100%' id="eventsTable">
+<div id="eventContainer">
 
-	</table>
 </div>
 
 
@@ -19,41 +17,59 @@
 		
 		date: "{{ events.date }}",
 		
-		description: "{{ events.description }}",
+		description: "{{ events.description | e('js') }}",
 		
 		{% set twigPic = (events.pic |first).name %}
-		pic: "{{ page.media[twigPic].cropZoom(200, 100).url }}",
+		pic: "{{ page.media[twigPic].cropZoom(200, 125).url }}",
 	},
 	
 	{% endfor %}
 	];
 	
-	function displayTable() {	
-		var table = $('#eventsTable')[0];
-		var rowCount = 0;
+	function displayContainer() {	
+		var container = $('#eventContainer');
 				
-		//Refresh table.
-		table.innerHTML = "";
+		//Refresh container.
+		container.innerHTML = "";
 		
-		for(i=0; i<events.length; i++){				
-				var row = table.insertRow(rowCount);
-				rowCount++;
-				
-				var picCell = row.insertCell(0);
-				picCell.className = "eventsPicture";
-				picCell.innerHTML =	'<img src="' + events[i].pic + '"/>';
-				
-				var conCell = row.insertCell(1);
-				conCell.className = "eventsContent";
-				conCell.innerHTML = '<div class="contentHeader">' +
-										'<div>' + events[i].title + '</div>' + 
-										'<div>' + events[i].date + '</div>' + 
-									'</div>' +
-									'<div class="contentDesc">' + events[i].description + '</div>';
+		for(i=0; i<events.length; i++){	
+			var eventDis = $('<div></div>');
+			eventDis.addClass('eventDisplay');
 			
+			var pic = $('<div><img src="' + events[i].pic + '"/></div>');
+			pic.addClass('eventPicture');
+			
+			var content = $('<div></div>');
+			content.addClass('eventContent');
+			
+			var contentHeader = $('<div></div>');
+			contentHeader.addClass('contentHeader');
+			
+			var eventTitle = $('<div>' + events[i].title + '</div>');
+			var eventDate = $('<div>' + events[i].date + '</div>');
+			
+			var contentDesc = $('<div>' + splitString(events[i].description) + '</div>');
+			contentDesc.addClass('contentDesc');
+
+			contentHeader.append(eventTitle);
+			contentHeader.append(eventDate);
+			
+			content.append(contentHeader);
+			content.append(contentDesc);
+			
+			eventDis.append(pic);
+			eventDis.append(content);
+			
+			container.append(eventDis);
 		}
+	};
+	
+	function splitString(str) {
+		if (str.length > 150) {
+			return str.substring(0,150);
+		}	
+		return str;
 	}
 	
-	$(document).ready(displayTable);
-	$(window).resize(displayTable);
+	$(document).ready(displayContainer);
 </script>
