@@ -93,7 +93,7 @@ form:
                 - image/*
         house.enabled:
               type: toggle
-              label: Show hosue location
+              label: Show house location
               highlight: 1
               default: 1
               options:
