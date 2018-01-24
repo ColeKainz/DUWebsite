@@ -1,56 +1,141 @@
 ---
 president:
-    name: Cookie
+    name: 'Quinn Chrest'
     position:
-        - president
-    bio: dsfsdfdsfsdfdsf
+        - President
+    bio: 'Hi my name is Quinn Chrest and this is my bio. I like to meme and dream and sometimes scream. My favorite flower is the heart flower because, you guessed it, its shaped like a <3. In my past time I like to dress up in my favorite outfits and go out on the town. There really is nothing more exhillerating than walking around knowing you''re looking good. Anyway, I hope you had as much fun reading this as I did writing it XOXOX, Quinny.'
     picture:
-        user/pages/04.members/_members/cookie.jpg:
-            name: cookie.jpg
+        'user/pages/04.Members/_members/Quinn C.JPG':
+            name: 'Quinn C.JPG'
             type: image/jpeg
-            size: 49045
-            path: user/pages/04.members/_members/cookie.jpg
+            size: 48029
+            path: 'user/pages/04.Members/_members/Quinn C.JPG'
 members:
     -
-        name: Moo
+        name: 'Josh Reynolds'
         position:
-            - mooooooooo
+            - 'VP Recruitment'
         picture:
-            user/pages/04.members/_members/elmo.jpeg:
-                name: elmo.jpeg
+            'user/pages/04.Members/_members/Josh R.JPG':
+                name: 'Josh R.JPG'
                 type: image/jpeg
-                size: 45514
-                path: user/pages/04.members/_members/elmo.jpeg
+                size: 49491
+                path: 'user/pages/04.Members/_members/Josh R.JPG'
     -
-        name: 'Yes'
+        name: 'Cole Spear'
         position:
-            - mhm
+            - 'VP Membership Education'
+            - 'Intramural Chair'
         picture:
-            user/pages/04.members/_members/csm_Cooley_Dennis__002__e6a2c94e98.jpg:
-                name: csm_Cooley_Dennis__002__e6a2c94e98.jpg
+            'user/pages/04.Members/_members/Cole S.JPG':
+                name: 'Cole S.JPG'
                 type: image/jpeg
-                size: 19535
-                path: user/pages/04.members/_members/csm_Cooley_Dennis__002__e6a2c94e98.jpg
+                size: 48503
+                path: 'user/pages/04.Members/_members/Cole S.JPG'
     -
-        name: dwfwdf
+        name: 'Ryan Turk'
         position:
-            - wfwfw
+            - 'VP Finance'
         picture:
-            user/pages/04.members/_members/cookie.jpg:
+            user/pages/04.Members/_members/cookie.jpg:
                 name: cookie.jpg
                 type: image/jpeg
                 size: 49045
-                path: user/pages/04.members/_members/cookie.jpg
+                path: user/pages/04.Members/_members/cookie.jpg
     -
-        name: ghy
+        name: 'Ryan Grey'
         position:
-            - ijij
+            - 'VP Loss Prevention'
+            - Historian
         picture:
-            user/pages/04.members/_members/banner.jpg:
-                name: banner.jpg
+            'user/pages/04.Members/_members/Ryan G.JPG':
+                name: 'Ryan G.JPG'
                 type: image/jpeg
-                size: 80430
-                path: user/pages/04.members/_members/banner.jpg
+                size: 48518
+                path: 'user/pages/04.Members/_members/Ryan G.JPG'
+    -
+        name: 'Andrew Graner'
+        position:
+            - 'VP Academic Excellence'
+            - 'Human Service Chair'
+        picture:
+            'user/pages/04.Members/_members/Andrew G.JPG':
+                name: 'Andrew G.JPG'
+                type: image/jpeg
+                size: 47160
+                path: 'user/pages/04.Members/_members/Andrew G.JPG'
+            'user/pages/04.Members/_members/Ryan G.JPG':
+                name: 'Ryan G.JPG'
+                type: image/jpeg
+                size: 48518
+                path: 'user/pages/04.Members/_members/Ryan G.JPG'
+    -
+        name: 'Blair Paniq'
+        position:
+            - 'VP External Relations'
+        picture:
+            user/pages/04.Members/_members/douch.jpg:
+                name: douch.jpg
+                type: image/jpeg
+                size: 43022
+                path: user/pages/04.Members/_members/douch.jpg
+    -
+        name: 'Mitchell Bemenderfer'
+        position:
+            - 'VP Administration'
+        picture:
+            'user/pages/04.Members/_members/Mitch B.JPG':
+                name: 'Mitch B.JPG'
+                type: image/jpeg
+                size: 44615
+                path: 'user/pages/04.Members/_members/Mitch B.JPG'
+    -
+        name: 'Tanner Mjelde'
+        position:
+            - 'Alumni Relations'
+            - 'Interfraternal Representative'
+        picture:
+            'user/pages/04.Members/_members/Tanner M.JPG':
+                name: 'Tanner M.JPG'
+                type: image/jpeg
+                size: 50845
+                path: 'user/pages/04.Members/_members/Tanner M.JPG'
+    -
+        name: 'Jay Lohse'
+        position:
+            - 'Associate Member Educator'
+        picture:
+            'user/pages/04.Members/_members/Jay L.JPG':
+                name: 'Jay L.JPG'
+                type: image/jpeg
+                size: 46678
+                path: 'user/pages/04.Members/_members/Jay L.JPG'
+    -
+        name: 'Cole Kainz'
+        position:
+            - Webmaster
+        picture:
+            'user/pages/04.Members/_members/Cole K.JPG':
+                name: 'Cole K.JPG'
+                type: image/jpeg
+                size: 51799
+                path: 'user/pages/04.Members/_members/Cole K.JPG'
+    -
+        name: 'Mitchell Fokken'
+        picture:
+            'user/pages/04.Members/_members/Mitch F.JPG':
+                name: 'Mitch F.JPG'
+                type: image/jpeg
+                size: 49132
+                path: 'user/pages/04.Members/_members/Mitch F.JPG'
+    -
+        name: 'Clay Moody'
+        picture:
+            'user/pages/04.Members/_members/Clay M.JPG':
+                name: 'Clay M.JPG'
+                type: image/jpeg
+                size: 50992
+                path: 'user/pages/04.Members/_members/Clay M.JPG'
 title: members
 ---
 
