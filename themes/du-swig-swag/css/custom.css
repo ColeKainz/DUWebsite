@@ -14,9 +14,11 @@
 html {
   overflow-y: scroll;
   overflow-x: hidden;
+  height: 100vh;
 }
 body {
-  /*background-image: url("../images/background.jpg");*/
+  min-height: 100vh;
+  position: relative;
 }
 .main-nav {
   font-size: 1.1rem;
@@ -87,6 +89,7 @@ body {
 .center-container {
   width: 100%;
   margin-top: 50px;
+  margin-bottom: 10px;
 }
 @media (min-width: 700px) {
   .center-container {
@@ -149,6 +152,22 @@ body {
     align-items: center;
   }
 }
+#footer {
+  background: #4169e1;
+  color: #ffffff;
+  z-index: 10;
+  height: 20px;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
+  position: absolute;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  -moz-box-shadow: 0 0 8px 0 black;
+  -webkit-box-shadow: 0 0 8px 0 black;
+  box-shadow: 0 0 8px 0 black;
+}
 .body {
   font-size: 1rem;
   line-height: 1.7;
@@ -174,6 +193,11 @@ body {
   color: #4169e1;
 }
 /* Content Styling */
+.wrap-image-left {
+  float: left;
+  padding-top: 5px;
+  padding-right: 10px;
+}
 .logo {
   text-decoration: none;
   font-size: 2rem;
