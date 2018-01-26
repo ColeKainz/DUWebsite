@@ -12,7 +12,7 @@ access:
 hashed_password: $2y$10$enQM5gkUwKjwaWdZINsKKOKErVTkpqRFsbU0SwQSMDl0jBfJO5naa
 language: en
 login_attempts: {  }
-twofa_secret: 54O3VKSKMZZW4KF75I355MHDNO2DB76F
+twofa_secret: WGOKMMYQMLEEEKYMZA23LV7PMNL6YGQW
 twofa_enabled: false
 authorized: false
 test: sgddfg
