@@ -1,8 +1,9 @@
 ---
 title: 'Information for Parents'
+media_order: quinn_parents.jpg
 ---
 
-**Parental Concerns**
+![](quinn_parents.jpg?classes=wrap-image-left)**Parental Concerns**
 
 We understand as a fraternity that you may have some concerns about your son joining our fraternity. The media has portrayed us as not an ideal place for college success. This will hopefully address some of the issues you may have with fraternities.
 

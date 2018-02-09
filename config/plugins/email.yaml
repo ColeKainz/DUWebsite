@@ -1,0 +1,15 @@
+enabled: true
+from: ndsudu@gmail.com
+to: ndsudu@gmail.com
+mailer:
+  engine: smtp
+  smtp:
+    server: smtp.gmail.com
+    port: 465
+    encryption: ssl
+    user: ndsudu@gmail.com
+    password: abc123abc1
+  sendmail:
+    bin: '/usr/sbin/sendmail -bs'
+content_type: text/html
+debug: true

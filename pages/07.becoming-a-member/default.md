@@ -3,7 +3,7 @@ title: Joining
 media_order: initiation.jpg
 ---
 
-![test](initiation.jpg?classes=wrap-image-left)**The North Dakota State Chapter of Delta Upsilon** has been promoting its highest standards of conduct since its colonization in 1970 here in Fargo. Our fraternity motto, 'Dikaia uputhuke' - justice our foundation, is the first milestone of the journey we take towards fulfilling our mission statement, Building Better Men. We achieve this by  following our four founding principles:
+![](initiation.jpg?classes=wrap-image-left)**The North Dakota State Chapter of Delta Upsilon** has been promoting its highest standards of conduct since its colonization in 1970 here in Fargo. Our fraternity motto, 'Dikaia uputhuke' - justice our foundation, is the first milestone of the journey we take towards fulfilling our mission statement, Building Better Men. We achieve this by  following our four founding principles:
 
 <table align="center">
     <tr><td style="padding-right: 20px;">The promotion of friendship</td><td>The advancement of justice</td></tr>

@@ -1,0 +1,30 @@
+title: Events
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+            header.contacts:
+              name: Contacts
+              type: list
+              style: vertical
+              label: Contacts
+
+              fields:
+                .position:
+                  type: text
+                  label: Position/Name
+
+                .email:
+                  type: text
+                  label: Email
+                  validate:
+                    type: email

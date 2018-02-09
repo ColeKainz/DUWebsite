@@ -1,0 +1,38 @@
+.length {
+	width: 300px;
+}
+
+.style {
+	width: 100%;
+	color: #000000;
+}
+
+.pbutton {
+	vertical-align: middle;
+	border-radius: 5px;
+	border: none;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	
+	background-color: #ffffff;
+	color: #4169e1;
+	
+	width: 100%;
+	
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+	text-decoration:none;
+}
+
+.pbutton:hover {
+	background-color: #a1c9f1;
+	color: #ffffff;
+}
+
+.pbutton:hover > a {
+	color: #ffffff;
+}
+
+.pbutton:active {
+	background-color: #4169e1;
+}

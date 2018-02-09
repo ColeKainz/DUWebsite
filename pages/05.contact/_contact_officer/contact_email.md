@@ -1,7 +1,15 @@
 ---
-title: Contact
+contacts:
+    -
+        position: Cow/Dude
+        email: cow@cow.cow
+    -
+        position: test
+        email: test@test.tes
+title: contact_officer
 form:
     name: contact
+    classes: length
     fields:
         -
             name: name
@@ -9,6 +17,7 @@ form:
             placeholder: 'Enter your name'
             autocomplete: 'on'
             type: text
+            classes: style
             validate:
                 required: true
         -
@@ -16,6 +25,15 @@ form:
             label: Email
             placeholder: 'Enter your email address'
             type: email
+            classes: style
+            validate:
+                required: true
+        -
+            name: officer_dropdown
+            size: long
+            type: select
+            classes: style
+            label: Officer
             validate:
                 required: true
         -
@@ -23,23 +41,20 @@ form:
             label: Message
             placeholder: 'Enter your message'
             type: textarea
+            classes: style
             validate:
                 required: true
     buttons:
         -
             type: submit
             value: Submit
-        -
-            type: reset
-            value: Reset
+            classes: pbutton
     process:
-        -
-            captcha:
-                recaptcha_secret: ENTER_YOUR_CAPTCHA_SECRET_KEY
         -
             email:
                 subject: '[Site Contact Form] {{ form.value.name|e }}'
                 body: '{% include ''forms/data.html.twig'' %}'
+                from: '{{ form.value.email }}'
         -
             save:
                 fileprefix: contact-
@@ -50,11 +65,5 @@ form:
             message: 'Thank you for getting in touch!'
         -
             display: thankyou
-content:
-    items: '@self.modular'
-    order:
-        by: date
-        dir: desc
-body_classes: modular
 ---
 

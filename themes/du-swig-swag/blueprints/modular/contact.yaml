@@ -1,0 +1,32 @@
+title: contact
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+            header.list:
+              name: list
+              type: list
+              style: vertical
+              label: List
+
+              fields:
+                .text:
+                  type: text
+                  label: Position
+
+                .picture:
+                  type: file
+                  label: Image (200x200)
+                  multiple: false
+                  destination: 'self@'
+                  accept:
+                    - image/*

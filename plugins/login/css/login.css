@@ -1,5 +1,5 @@
 
-.primary {
+#grav-login > .primary {
 	vertical-align: middle;
 	border-radius: 10px;
 	border: none;
@@ -15,34 +15,34 @@
 	text-decoration:none;
 }
 
-.primary:hover {
+#grav-login > .primary:hover {
 	background-color: #a1c9f1;
 	color: #ffffff;
 }
 
-.primary:hover > a {
+#grav-login > .primary:hover > a {
 	color: #ffffff;
 }
 
-.primary:active {
+#grav-login > .primary:active {
 	background-color: #4169e1;
 }
 
-.secondary{
+#grav-login > .secondary{
 	width: 100%;
 	color: #ffffff;
 }
 
-.login-status {
+#grav-login > .login-status {
     white-space: nowrap;
     vertical-align: middle;
 }
 
-.vspace{
+#grav-login > .vspace{
 	margin-top: 10px !important;
 }
 
-.text-style {
+#grav-login > .text-style {
 	width: 200px;
 	height: 25px;
 	
@@ -54,7 +54,7 @@
 	padding: 0px 10px 0px 10px;
 }
 
-.select-style {
+#grav-login > .select-style {
 	width: 200px;
 	height: 25px;
 	
