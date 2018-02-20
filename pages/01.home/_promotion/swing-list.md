@@ -1,7 +1,7 @@
 ---
 list:
     -
-        text: "Princess Twilight Sparkle is a super smart pony\r\nand a natural born leader. She is good at helping\r\nher pony friends use their skills and talents to get \r\nthe job done, while discovering new things about\r\nherself and all her amazing friends!"
+        text: "Delta Upsilon is a place for young men to develop their\r\ncharacter and skills through planning and holding events,\r\nparticipating in philanthropies and volunteering, and\r\npushing themselves to grow."
         picture:
             user/pages/01.home/_promotion/home2.jpg:
                 name: home2.jpg
@@ -9,7 +9,7 @@ list:
                 size: 11565
                 path: user/pages/01.home/_promotion/home2.jpg
     -
-        text: "Fluttershy is a kind and gentle pony with everyone.\r\nShe likes to help her pony friends solve their problems.\r\nShe takes good care of the animals in Ponyville by feeding\r\nthem and giving them a good home."
+        text: "Meet friends that will last a lifetime, helping \r\neach other grow and develop bonds.\r\nWith a strong alumni chapter, learn from \r\nbrothers before and after graduating!"
         picture:
             user/pages/01.home/_promotion/home3.jpg:
                 name: home3.jpg
@@ -17,7 +17,7 @@ list:
                 size: 17197
                 path: user/pages/01.home/_promotion/home3.jpg
     -
-        text: "Applejack is honest, friendly and sweet to the core! \r\nShe is always ready to lend a hoof to help her pony\r\n friends. She lives and works at Sweet Apple Acres \r\nand she makes sure to take good care of the environment."
+        text: "The only non-secret fraternity on campus,\r\nTo help us live by our founding values and principles,\r\nwe encourage the community to scrutinize our\r\npractices so we may improve them."
         picture:
             user/pages/01.home/_promotion/home1.jpg:
                 name: home1.jpg
@@ -25,7 +25,7 @@ list:
                 size: 15284
                 path: user/pages/01.home/_promotion/home1.jpg
     -
-        text: "Rainbow Dash is always ready for an adventure with \r\nher MY LITTLE PONY friends. Rain or shine, she is a \r\nloyal dependable friend who will never let you down!"
+        text: "Delta Upsilon is rich in history.\r\nwith over 150 years as an organization\r\nand over 45 years at NDSU, discover and\r\ncreate old and new traditions."
         picture:
             user/pages/01.home/_promotion/home4.jpg:
                 name: home4.jpg
